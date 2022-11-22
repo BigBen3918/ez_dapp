@@ -6,6 +6,7 @@ import { ThemeProvider, createTheme } from '@mui/material/styles';
 import Home from './views/home';
 import Farm from './views/farm';
 import Position from './views/position';
+import TVL from './views/tvl';
 import Lend from './views/lend';
 import ViewBase from './components/viewbase';
 
@@ -41,6 +42,7 @@ export default function App() {
                         <Route path={'/farm'} element={<Farm />} />
                         <Route path={'/home'} element={<Home />} />
                         <Route path={'/position'} element={<Position />} />
+                        <Route path={'/tvl'} element={<TVL />} />
                     </Routes>
                 </ViewBase>
             </ThemeProvider>
