@@ -3,9 +3,10 @@ import { Route, BrowserRouter, Routes, Navigate } from 'react-router-dom';
 import { Web3ContextProvider } from './context/Web3Context';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 
-import Farm from './views/farm';
-import Lend from './views/lend';
 import Home from './views/home';
+import Farm from './views/farm';
+import Position from './views/position';
+import Lend from './views/lend';
 import ViewBase from './components/viewbase';
 
 import { ToastContainer } from 'react-toastify';
@@ -39,6 +40,7 @@ export default function App() {
                         <Route path={'/lend'} element={<Lend />} />
                         <Route path={'/farm'} element={<Farm />} />
                         <Route path={'/home'} element={<Home />} />
+                        <Route path={'/position'} element={<Position />} />
                     </Routes>
                 </ViewBase>
             </ThemeProvider>
