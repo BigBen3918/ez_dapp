@@ -31,10 +31,11 @@ const useStyles = makeStyles((theme: any) => ({
                 opacity: '.6',
             },
             '& > div:first-child': {
+                position: 'relative',
                 flex: '1 1 50%',
                 background: '#342D55',
                 borderRadius: '13px',
-                '& > div:first-child': {
+                '& .header': {
                     display: 'flex',
                     justifyContent: 'space-between',
                     alignItems: 'center',
@@ -45,7 +46,7 @@ const useStyles = makeStyles((theme: any) => ({
                         fontWeight: 700,
                     },
                 },
-                '& > div:last-child': {
+                '& .footer': {
                     display: 'flex',
                     justifyContent: 'space-between',
                     alignItems: 'center',
@@ -58,17 +59,18 @@ const useStyles = makeStyles((theme: any) => ({
                 },
             },
             '& > div:last-child': {
+                position: 'relative',
                 flex: '1 1 50%',
                 background: '#342D55',
                 borderRadius: '13px',
-                '& > div:first-child': {
+                '& .header': {
                     display: 'flex',
                     justifyContent: 'space-between',
                     alignItems: 'center',
                     gap: '10px',
                     padding: '30px 50px',
                 },
-                '& > div:last-child': {
+                '& .footer': {
                     display: 'flex',
                     justifyContent: 'space-between',
                     alignItems: 'center',
@@ -93,6 +95,16 @@ const useStyles = makeStyles((theme: any) => ({
             },
         },
     },
+    gradient__back: {
+        position: 'absolute',
+        top: '5px',
+        left: '0',
+        width: '100%',
+        height: '100%',
+        background: 'linear-gradient(104.45deg, #6452DE 0%, #F76CC5 73.89%, #FF6F6F 112.74%)',
+        zIndex: '-1',
+        borderRadius: '10px',
+    },
 }));
 
 export default function Position() {
@@ -104,7 +116,7 @@ export default function Position() {
                 <Typography variant="h2">Your Position</Typography>
                 <Box className="modal">
                     <Box>
-                        <Box>
+                        <Box className="header">
                             <Box>
                                 <Typography variant="subtitle1">Claimable ALPHA Rewards</Typography>
                                 <Typography variant="h4">0.00 ALPHA</Typography>
@@ -112,20 +124,21 @@ export default function Position() {
                             <Common_FillButton content="Claim & Stake" />
                         </Box>
                         <Box className="devideLine" />
-                        <Box>
+                        <Box className="footer">
                             <Typography variant="subtitle1">Pending ALPHA Rewards</Typography>
                             <Typography variant="body1">~0.00 ALPHA</Typography>
                         </Box>
+                        <Box className={classes.gradient__back}></Box>
                     </Box>
                     <Box>
-                        <Box>
+                        <Box className="header">
                             <Typography variant="subtitle1">Your Info</Typography>
                             <Typography variant="h4">
                                 <AccountCircleIcon />
                             </Typography>
                         </Box>
                         <Box className="devideLine" />
-                        <Box>
+                        <Box className="footer">
                             <Box>
                                 <Typography variant="subtitle1">Total Position Value</Typography>
                                 <Typography variant="h4">$0.00</Typography>
@@ -139,6 +152,7 @@ export default function Position() {
                                 <Typography variant="h4">$0.00</Typography>
                             </Box>
                         </Box>
+                        <Box className={classes.gradient__back}></Box>
                     </Box>
                 </Box>
                 <Box className="positions">
