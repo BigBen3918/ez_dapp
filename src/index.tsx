@@ -5,24 +5,24 @@ import App from './App';
 import './index.css';
 
 declare global {
-  interface Window {
-    aptos: any;
-  }
+    interface Window {
+        aptos: any;
+    }
 }
 
 declare global {
-  interface Window {
-    martian: any;
-  }
+    interface Window {
+        martian: any;
+    }
 }
 
-declare module "@mui/styles/defaultTheme" {
-  interface DefaultTheme extends Theme { }
+declare module '@mui/styles/defaultTheme' {
+    interface DefaultTheme extends Theme {}
 }
 
 const root = ReactDOM.createRoot(document.getElementById('root') as Element);
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+    <React.StrictMode>
+        <App />
+    </React.StrictMode>
 );
