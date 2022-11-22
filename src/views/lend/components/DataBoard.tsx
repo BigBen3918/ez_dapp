@@ -6,14 +6,12 @@ import Piehart1Icon from '../../../asset/icons/pie-chart1.svg';
 
 import { Box, Typography } from '@mui/material';
 import { Web3Context, IAptosInterface, IPoolInfo } from '../../../context/Web3Context';
-import { trim } from '../../../helper/trim';
 import { formatValue } from '../../../helper/formatValue';
 
 function DataBoard() {
-
     const aptosContext = useContext(Web3Context) as IAptosInterface;
     const arcPrice = aptosContext.tokenPrice.arc;
-    const aptosPrice = aptosContext.tokenPrice.aptos
+    const aptosPrice = aptosContext.tokenPrice.aptos;
     const poolInfo = aptosContext.poolInfo as IPoolInfo;
     const totalDeposit = poolInfo.aptos.totalDeposit * aptosPrice + poolInfo.arc.totalDeposit * arcPrice;
     const totalBorrow = poolInfo.aptos.totalBorrow * aptosPrice + poolInfo.arc.totalBorrow * arcPrice;
@@ -22,21 +20,24 @@ function DataBoard() {
         {
             text: 'Total Deposited',
             logo: BankIcon,
-            value: formatValue(totalDeposit, 2)
-        }, {
+            value: formatValue(totalDeposit, 2),
+        },
+        {
             text: 'Total Borrowed',
             logo: WalletIcon,
-            value: formatValue(totalBorrow, 2)
-        }, {
+            value: formatValue(totalBorrow, 2),
+        },
+        {
             text: 'Market Cap',
             logo: PiehartIcon,
-            value: '250K'
-        }, {
+            value: '250K',
+        },
+        {
             text: 'ARC Price',
             logo: Piehart1Icon,
-            value: arcPrice
-        }
-    ]
+            value: arcPrice,
+        },
+    ];
 
     return (
         <div>
@@ -44,7 +45,7 @@ function DataBoard() {
                 sx={{
                     display: 'flex',
                     justifyContent: 'center',
-                    flexWrap: 'wrap'
+                    flexWrap: 'wrap',
                 }}
             >
                 {datas.map((item, index) => (
@@ -62,17 +63,17 @@ function DataBoard() {
                             width: '200px',
                             height: '200px',
                             mx: 2,
-                            mb: 2
+                            mb: 2,
                         }}
                     >
-                        <img src={item.logo} alt='logo' style={{ width: '32px', height: '32px' }} />
+                        <img src={item.logo} alt="logo" style={{ width: '32px', height: '32px' }} />
                         <Typography sx={{ fontSize: '24px', mt: 1, color: '#555' }}>$ {item.value}</Typography>
                         <Typography sx={{ color: '#666' }}>{item.text}</Typography>
                     </Box>
                 ))}
             </Box>
         </div>
-    )
+    );
 }
 
 export default DataBoard;
