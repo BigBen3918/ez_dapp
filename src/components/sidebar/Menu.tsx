@@ -9,71 +9,71 @@ import FarmIcon from '../../asset/icons/farm.svg';
 import DocsIcon from '../../asset/icons/docs.svg';
 import LendIcon from '../../asset/icons/dashboard.svg';
 import GovernIcon from '../../asset/icons/govern.svg';
+import Invest from '../../asset/icons/invest.svg';
 import { Typography } from '@mui/material';
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme: any) => ({
     menuList: {
         '& .MuiTypography-root': {
             fontSize: '18px',
             fontFamily: 'Square',
             fontWeight: 500,
             lineHeight: '55px',
-            color: '#FFF'
-        }
-    }
+            color: '#FFF',
+        },
+    },
 })) as any;
 
 const menuList = [
     {
         title: 'Home',
         param: 'home',
-        logo: LendIcon
-    }, {
+        logo: LendIcon,
+    },
+    {
         title: 'Farm Pools',
         param: 'farm',
-        logo: FarmIcon
-    }, {
+        logo: FarmIcon,
+    },
+    {
         title: 'Your Position',
         param: 'position',
         logo: SwapIcon,
-
-    }, {
+    },
+    {
         title: 'Pool TVL',
         param: 'tvl',
         logo: GovernIcon,
-    }, {
-        title: 'Lend',
-        param: 'lend',
-        logo: GovernIcon,
-    }, {
+    },
+    {
+        title: 'Invest',
+        param: 'invest',
+        logo: Invest,
+    },
+    {
         title: 'Docs',
         logo: DocsIcon,
         external: true,
-        url: ''
-    }
-]
+        url: '',
+    },
+];
 
 function MenuList() {
-
     const classes = useStyles();
     const [menu, setMenu] = useState('lend');
     const location = useLocation();
 
     const checkPage = useCallback((url: string): string => {
-        const path = url.replace("/", "");
-        if (path.indexOf("home") >= 0) {
+        const path = url.replace('/', '');
+        if (path.indexOf('home') >= 0) {
             return 'home';
-        }
-        else if (path.indexOf("farm") >= 0) {
+        } else if (path.indexOf('farm') >= 0) {
             return 'farm';
-        }
-        else if (path.indexOf("lend") >= 0) {
-            return 'lend';
-        }
-        else if (path.indexOf("tvl") >= 0) {
+        } else if (path.indexOf('invest') >= 0) {
+            return 'invest';
+        } else if (path.indexOf('tvl') >= 0) {
             return 'tvl';
-        }
-        else if (path.indexOf("position") >= 0) {
+        } else if (path.indexOf('position') >= 0) {
             return 'position';
         }
         return '';
@@ -83,62 +83,68 @@ function MenuList() {
         const { pathname } = location;
         const menu = checkPage(pathname);
         setMenu(menu);
-    }, [location])
+    }, [location]);
 
     return (
         <div className={classes.menuList}>
-            <Typography textAlign='center' sx={{ fontSize: '36px !important', fontWeight: 'bold' }}>EZ Finance</Typography>
+            <Typography textAlign="center" sx={{ fontSize: '36px !important', fontWeight: 'bold' }}>
+                EZ Finance
+            </Typography>
             <Box sx={{ mt: 8 }}>
-                {
-                    menuList?.map((item, index) => (
-                        item.external ?
-                            <Link
-                                key={index}
-                                target='_blank'
-                                href={item.url}
-                                sx={{
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    mt: 1,
-                                    borderRadius: '15px',
-                                    textDecoration: 'none',
-                                    backgroundImage:
-                                        (menu === item.param) ? 'linear-gradient(93.57deg, #543DFB 0.71%, #F76CC5 50.59%, #FF4848 97.83%)' : 'transparent'
-                                }}
-                            >
-                                <img
-                                    src={item.logo}
-                                    style={{ width: '16px', height: '16px', margin: '15px 20px' }}
-                                    alt='menu_logo'
-                                />
-                                <Typography>{item.title}</Typography>
-                            </Link> :
-                            <Link
-                                key={index}
-                                component={NavLink}
-                                to={`${item.param}`}
-                                sx={{
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    mt: 1,
-                                    borderRadius: '15px',
-                                    textDecoration: 'none',
-                                    backgroundImage:
-                                        (menu === item.param) ? 'linear-gradient(93.57deg, #543DFB 0.71%, #F76CC5 50.59%, #FF4848 97.83%)' : 'transparent'
-                                }}
-                            >
-                                <img
-                                    src={item.logo}
-                                    style={{ width: '16px', height: '16px', margin: '15px 20px' }}
-                                    alt='menu_logo'
-                                />
-                                <Typography>{item.title}</Typography>
-                            </Link>
-                    ))
-                }
-            </Box >
-        </div >
-    )
+                {menuList?.map((item, index) =>
+                    item.external ? (
+                        <Link
+                            key={index}
+                            target="_blank"
+                            href={item.url}
+                            sx={{
+                                display: 'flex',
+                                alignItems: 'center',
+                                mt: 1,
+                                borderRadius: '15px',
+                                textDecoration: 'none',
+                                backgroundImage:
+                                    menu === item.param
+                                        ? 'linear-gradient(93.57deg, #543DFB 0.71%, #F76CC5 50.59%, #FF4848 97.83%)'
+                                        : 'transparent',
+                            }}
+                        >
+                            <img
+                                src={item.logo}
+                                style={{ width: '16px', height: '16px', margin: '15px 20px' }}
+                                alt="menu_logo"
+                            />
+                            <Typography>{item.title}</Typography>
+                        </Link>
+                    ) : (
+                        <Link
+                            key={index}
+                            component={NavLink}
+                            to={`${item.param}`}
+                            sx={{
+                                display: 'flex',
+                                alignItems: 'center',
+                                mt: 1,
+                                borderRadius: '15px',
+                                textDecoration: 'none',
+                                backgroundImage:
+                                    menu === item.param
+                                        ? 'linear-gradient(93.57deg, #543DFB 0.71%, #F76CC5 50.59%, #FF4848 97.83%)'
+                                        : 'transparent',
+                            }}
+                        >
+                            <img
+                                src={item.logo}
+                                style={{ width: '16px', height: '16px', margin: '15px 20px' }}
+                                alt="menu_logo"
+                            />
+                            <Typography>{item.title}</Typography>
+                        </Link>
+                    )
+                )}
+            </Box>
+        </div>
+    );
 }
 
 export default MenuList;

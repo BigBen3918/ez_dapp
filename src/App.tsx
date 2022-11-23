@@ -8,6 +8,7 @@ import Farm from './views/farm';
 import Position from './views/position';
 import TVL from './views/tvl';
 import Lend from './views/lend';
+import Invest from './views/invest';
 import ViewBase from './components/viewbase';
 
 import { ToastContainer } from 'react-toastify';
@@ -39,6 +40,7 @@ export default function App() {
                     <Routes>
                         <Route path="/" element={<Navigate to="/home" replace />} />
                         <Route path={'/lend'} element={<Lend />} />
+                        <Route path={'/invest'} element={<Invest />} />
                         <Route path={'/farm'} element={<Farm />} />
                         <Route path={'/home'} element={<Home />} />
                         <Route path={'/position'} element={<Position />} />
