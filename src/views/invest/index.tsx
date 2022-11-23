@@ -37,6 +37,7 @@ const useStyles = makeStyles((theme: any) => ({
             justifyContent: 'center',
             width: '100%',
             marginTop: '20px',
+            flexWrap: 'wrap',
             gap: '20px',
             '& .MuiSwitch-thumb': {
                 background: 'linear-gradient(93.41deg, #6452DE 0.68%, #F76CC5 53.61%, #FF6F6F 103.74%)',
