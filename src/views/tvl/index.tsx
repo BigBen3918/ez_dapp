@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Typography } from '@mui/material';
+import { Box, Typography, Grid } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import Container from '../../components/container';
 import ProtocolModal from './components/protocol_modal';
@@ -25,6 +25,7 @@ const useStyles = makeStyles((theme: any) => ({
             alignItems: 'center',
             gap: '30px',
             margin: '40px 0',
+            flexWrap: 'wrap',
         },
     },
     divide_line: {
@@ -48,7 +49,17 @@ export default function TVL() {
     const classes = useStyles();
 
     const protocolData = ['Uniswap V2 pools TVL', 'Sushiswap pools TVL', 'Curve pools TVL'];
-    const poolData = ['Uniswap V2 pools TVL', 'Sushiswap pools TVL', 'Curve pools TVL'];
+    const poolData = [
+        '818,768.67',
+        '818,768.67',
+        '818,768.67',
+        '818,768.67',
+        '818,768.67',
+        '818,768.67',
+        '818,768.67',
+        '818,768.67',
+        '818,768.67',
+    ];
 
     return (
         <Container>
@@ -87,11 +98,11 @@ export default function TVL() {
                     </Box>
                 </Box>
                 <Box className={classes.divide_line} />
-                <Box className={'protocol_card'}>
+                <Grid container justifyContent="space-between" alignItems={'center'} sx={{ marginTop: '40px' }}>
                     {poolData.map((item: any, index: number) => (
                         <PoolModal title={item} key={index} />
                     ))}
-                </Box>
+                </Grid>
             </Box>
         </Container>
     );

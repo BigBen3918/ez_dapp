@@ -19,7 +19,7 @@ export default function ProtocolModal(props: any) {
     return (
         <Box
             sx={{
-                flex: '1 1 33.3%',
+                flex: '1',
                 background: '#342D55',
                 position: 'relative',
                 padding: '30px 50px',
