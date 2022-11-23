@@ -29,6 +29,12 @@ const useStyles = makeStyles((theme: any) => ({
     part1: {
         display: 'flex',
         alignItems: 'center',
+        [theme.breakpoints.down('md')]: {
+            flexWrap: 'wrap-reverse',
+            flexDirection: 'column-reverse',
+            justifyContent: 'center',
+            textAlign: 'center',
+        },
         justifyContent: 'space-between',
         width: '100%',
         backgroundImage: 'linear-gradient(93.57deg, #543DFB 0.71%, #F76CC5 50.59%, #FF4848 97.83%)',
@@ -39,7 +45,10 @@ const useStyles = makeStyles((theme: any) => ({
             flexDirection: 'column',
             justifyContent: 'space-around',
             flex: '1 1 65%',
-            padding: '45px 0px 65px 70px',
+            padding: '45px',
+            [theme.breakpoints.down('sm')]: {
+                padding: '15px',
+            },
             '& > h1': {
                 fontStyle: 'normal',
                 fontSize: '56px',
@@ -47,6 +56,9 @@ const useStyles = makeStyles((theme: any) => ({
                 lineHeight: '69px',
                 letterSpacing: '-0.005em',
                 padding: '30px 0',
+                [theme.breakpoints.down('md')]: {
+                    fontSize: '35px',
+                },
             },
             '& > h3': {
                 fontSize: '18px',
@@ -57,9 +69,10 @@ const useStyles = makeStyles((theme: any) => ({
             '& > div': {
                 display: 'flex',
                 alignItems: 'center',
-                width: '95%',
+                width: '100%',
                 direction: 'row',
                 gap: '20px',
+                flexWrap: 'wrap',
                 '& > div': {
                     borderRadius: '10px',
                     backgroundColor: 'unset',
@@ -67,18 +80,27 @@ const useStyles = makeStyles((theme: any) => ({
                     padding: '20px 30px',
                     border: '1px solid white',
                     width: '100%',
-                    flex: '1 1 50%',
+                    flex: '1',
 
                     '& > h2': {
                         fontSize: '40px',
                         letter: '2.5%',
                         lineHeight: '50px',
+                        [theme.breakpoints.down('md')]: {
+                            fontSize: '25px',
+                        },
                     },
                 },
+            },
+            [theme.breakpoints.down('lg')]: {
+                flex: '1',
             },
         },
         '& > div:nth-child(2)': {
             flex: '1 1 35%',
+            [theme.breakpoints.down('lg')]: {
+                flex: '1',
+            },
             display: 'flex',
             justifyContent: 'flex-end',
             '& > img': {
@@ -94,6 +116,9 @@ const useStyles = makeStyles((theme: any) => ({
         gap: '20px',
         width: '100%',
         marginTop: '30px',
+        [theme.breakpoints.down('lg')]: {
+            flexWrap: 'wrap',
+        },
         '& > div': {
             flex: '1 1 50%',
             position: 'relative',
@@ -105,6 +130,7 @@ const useStyles = makeStyles((theme: any) => ({
             '& img': {
                 borderRadius: '10px',
                 objectFit: 'cover',
+                zIndex: 0,
             },
             '& h3': {
                 fontSize: '40px',
@@ -141,7 +167,11 @@ const useStyles = makeStyles((theme: any) => ({
             justifyContent: 'space-around',
             alignItems: 'flex-start',
             borderRadius: '15px',
-
+            [theme.breakpoints.down('md')]: {
+                alignItems: 'center',
+                flexDirection: 'column',
+                padding: '30px',
+            },
             '& > div': {
                 display: 'flex',
                 flexDirection: 'column',
@@ -149,6 +179,9 @@ const useStyles = makeStyles((theme: any) => ({
                 alignItems: 'center',
                 padding: '20px',
                 flex: '1 1 33.3%',
+                [theme.breakpoints.down('md')]: {
+                    flex: '1',
+                },
                 '& > h5': {
                     padding: '30px 0',
                 },
@@ -160,13 +193,25 @@ const useStyles = makeStyles((theme: any) => ({
     },
     part4: {
         width: '100%',
-        marginTop: '150px',
+        marginTop: '100px',
         '& .title': {
             display: 'flex',
             justifyContent: 'space-between',
             alignItems: 'center',
+            [theme.breakpoints.down('md')]: {
+                gap: 20,
+                textAlign: 'center',
+                alignItems: 'center',
+                flexDirection: 'column',
+            },
             '& h3': {
                 padding: '20px 0',
+                [theme.breakpoints.down('md')]: {
+                    padding: '10px 0',
+                },
+                [theme.breakpoints.down('sm')]: {
+                    fontSize: '30px',
+                },
             },
             '& h6': {
                 fontSize: '18px',
@@ -196,6 +241,10 @@ const useStyles = makeStyles((theme: any) => ({
         textAlign: 'center',
         '& > h3': {
             padding: '20px 0',
+            [theme.breakpoints.down('md')]: {
+                padding: '10px 0',
+                fontSize: '35px',
+            },
         },
         '& > h6': {
             fontSize: '18px',
@@ -209,6 +258,12 @@ const useStyles = makeStyles((theme: any) => ({
             alignItems: 'center',
             justifyContent: 'space-around',
             padding: '20px 30px',
+            [theme.breakpoints.down('sm')]: {
+                padding: '10px',
+                '& h5': {
+                    fontSize: '20px',
+                },
+            },
             '& img': {
                 borderRadius: '50%',
                 width: '40px',
@@ -220,13 +275,18 @@ const useStyles = makeStyles((theme: any) => ({
         },
     },
     part6: {
-        marginTop: '150px',
+        marginTop: '100px',
         background: '#342D55',
         width: '100%',
         padding: '50px',
         display: 'flex',
         alignItems: 'center',
         borderRadius: '10px',
+        [theme.breakpoints.down('md')]: {
+            flexDirection: 'column-reverse',
+            textAlign: 'center',
+            padding: '20px',
+        },
         '& div': {
             flex: '1 1 50%',
             '& h3': {
@@ -242,7 +302,13 @@ const useStyles = makeStyles((theme: any) => ({
                 paddingBottom: '20px',
             },
             '& img': {
-                width: '350px',
+                width: '300px',
+                [theme.breakpoints.down('lg')]: {
+                    width: '250px',
+                },
+                [theme.breakpoints.down('sm')]: {
+                    width: '100%',
+                },
             },
         },
     },
@@ -341,7 +407,8 @@ function Home() {
                                 justifyContent: 'space-around',
                                 flexDirection: 'column',
                                 p: 5,
-                                width: '70%',
+                                width: { md: '70%', sm: '80%', xs: '100%' },
+                                zIndex: 2,
                             }}
                         >
                             <Box>
@@ -363,7 +430,8 @@ function Home() {
                                 justifyContent: 'space-around',
                                 flexDirection: 'column',
                                 p: 5,
-                                width: '70%',
+                                zIndex: 2,
+                                width: { md: '70%', sm: '80%', xs: '100%' },
                             }}
                         >
                             <Box>
@@ -380,7 +448,9 @@ function Home() {
                     </Box>
                 </Box>
                 <Box className={classes.part3}>
-                    <Typography variant="h3">Why Farm with Homora V2?</Typography>
+                    <Typography variant="h3" sx={{ fontSize: { xs: '30px', sm: '35px', md: '45px' } }}>
+                        Why Farm with Homora V2?
+                    </Typography>
                     <Typography variant="subtitle1">High Yield. High Security. Quality Pools.</Typography>
                     <Box>
                         <Box>
@@ -471,7 +541,13 @@ function Home() {
                             Nulla sit ac feugiat senectus proin volutpat. Enim ac pulvinar a tortor feugiat sed sit sed
                             orci. Nisl non sit integer dui gravida.
                         </Typography>
-                        <Stack direction={'row'} alignContent="center" gap={5}>
+                        <Stack
+                            direction={'row'}
+                            alignContent="center"
+                            flexWrap={'wrap'}
+                            gap={2}
+                            sx={{ justifyContent: { lg: 'flex-start', xs: 'center' } }}
+                        >
                             <Common_FillButton content="Partner with us" />
                             <Common_OutlineButton content="Partner with us" />
                         </Stack>

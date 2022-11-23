@@ -2,10 +2,13 @@ import React from 'react';
 import { Box } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme: any) => ({
     root: {
         width: '100%',
         padding: '50px',
+        [theme.breakpoints.down('sm')]: {
+            padding: '0',
+        },
     },
 }));
 

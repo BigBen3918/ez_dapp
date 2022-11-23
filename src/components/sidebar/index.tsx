@@ -12,11 +12,8 @@ import { BrowserView, MobileView } from 'react-device-detect';
 // project component
 import MenuList from './Menu';
 
-
-
 // style constant
 const useStyles = makeStyles((theme) => ({
-
     drawerPaper: {
         width: '280px',
         color: theme.palette.text.primary,
@@ -26,18 +23,17 @@ const useStyles = makeStyles((theme) => ({
         paddingLeft: '16px',
         paddingRight: '16px',
         [theme.breakpoints.down('sm')]: {
-            height: 'calc(100vh - 56px)'
-        }
-    }
+            height: 'calc(100vh - 56px)',
+        },
+    },
 })) as any;
 
 //-----------------------|| SIDEBAR DRAWER ||-----------------------//
 
 const Sidebar = ({ drawerOpen, drawerToggle }) => {
-
     const classes = useStyles();
     const theme = useTheme();
-    const matchUpMd = useMediaQuery(theme.breakpoints.up('md'));
+    const matchUpLg = useMediaQuery(theme.breakpoints.up('lg'));
 
     const drawer = (
         <React.Fragment>
@@ -62,19 +58,19 @@ const Sidebar = ({ drawerOpen, drawerToggle }) => {
         <nav className={classes.drawer}>
             <Drawer
                 container={container}
-                variant={matchUpMd ? 'persistent' : 'temporary'}
+                variant={matchUpLg ? 'persistent' : 'temporary'}
                 anchor="left"
                 open={drawerOpen}
                 onClose={drawerToggle}
                 classes={{
-                    paper: classes.drawerPaper
+                    paper: classes.drawerPaper,
                 }}
                 ModalProps={{ keepMounted: true }}
                 PaperProps={{
                     sx: {
                         backgroundColor: '#342D55',
-                        border: 'none'
-                    }
+                        border: 'none',
+                    },
                 }}
             >
                 {drawer}
