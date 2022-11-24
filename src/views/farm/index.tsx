@@ -1,10 +1,13 @@
-import React from 'react';
-import { Box, Typography, ToggleButtonGroup, ToggleButton } from '@mui/material';
+import React, { useEffect } from 'react';
+import { Box, Typography, ToggleButtonGroup, ToggleButton, Stack } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import Container from '../../components/container';
 import PoolCard from './components/PoolCard';
 
 import EthereumIcon from '../../asset/icons/crypto-ethereum.png';
+import USDCIcon from '../../asset/icons/crypto-usdc.png';
+import USDTIcon from '../../asset/icons/crypto-usdt.png';
+import BTCIcon from '../../asset/icons/crypto-btc.png';
 import DaiIcon from '../../asset/icons/crypto-dai.svg';
 
 const useStyles = makeStyles((theme: any) => ({
@@ -44,7 +47,8 @@ const useStyles = makeStyles((theme: any) => ({
         '& .MuiToggleButtonGroup-root': {
             width: '100%',
             display: 'flex',
-            justifyContent: 'space-between',
+            gridTemplateAreas: 'auto auto',
+            justifyContent: 'flex-start',
             alignItems: 'center',
             borderRadius: 'unset',
             gap: '10px',
@@ -60,7 +64,18 @@ const useStyles = makeStyles((theme: any) => ({
             padding: '18px 33px',
             color: 'white',
             fontSize: '18px',
-            minWidth: '170px',
+            minWidth: '190px',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            gap: '10px',
+            '& img': {
+                width: '30px',
+                height: '30px',
+                borderRadius: '50%',
+                zIndex: 0,
+                userSelect: 'none',
+            },
             [theme.breakpoints.down('sm')]: {
                 width: '100%',
             },
@@ -248,15 +263,38 @@ function Farm() {
                 </Box>
             </Box>
             <Box className={classes.part2}>
-                <ToggleButtonGroup value={alignment} exclusive onChange={(e: any) => setAlignment(e.target.value)}>
+                <ToggleButtonGroup
+                    value={alignment}
+                    exclusive
+                    onChange={(e: any) => {
+                        setAlignment(e.target.value);
+                    }}
+                >
                     <ToggleButton value="1">All assets</ToggleButton>
-                    <ToggleButton value="2">Eth(28)</ToggleButton>
-                    <ToggleButton value="3">USDC(28)</ToggleButton>
-                    <ToggleButton value="4">DAI(28)</ToggleButton>
-                    <ToggleButton value="5">USDT(28)</ToggleButton>
-                    <ToggleButton value="6">AAVE(28)</ToggleButton>
-                    <ToggleButton value="7">CRV2(28)</ToggleButton>
-                    <ToggleButton value="8">DPI(21)</ToggleButton>
+                    <ToggleButton value="2">
+                        <img src={BTCIcon} alt="" />
+                        BTC
+                    </ToggleButton>
+                    <ToggleButton value="3">
+                        <img src={EthereumIcon} alt="" />
+                        Eth
+                    </ToggleButton>
+                    <ToggleButton value="4">
+                        <img src={DaiIcon} alt="" />
+                        DAI
+                    </ToggleButton>
+                    <ToggleButton value="5">
+                        <img src={USDCIcon} alt="" />
+                        USDC
+                    </ToggleButton>
+                    <ToggleButton value="6">
+                        <img src={USDTIcon} alt="" />
+                        USDT
+                    </ToggleButton>
+                    <ToggleButton value="7">
+                        <img src={USDCIcon} alt="" />
+                        ceUSDC
+                    </ToggleButton>
                 </ToggleButtonGroup>
             </Box>
 
