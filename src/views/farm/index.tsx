@@ -133,6 +133,7 @@ function Farm() {
                     farm_apr: '0.16%',
                     trade_volume: '$60,795,345.28',
                     tvl: '$118,319.89',
+                    pair: i + '-' + j,
                 };
                 bump.push(obj);
             }
@@ -190,7 +191,7 @@ function Farm() {
             {/* Pool Component */}
             <Box>
                 {testPool.map((pool: any, index: number) => (
-                    <PoolCard key={index} poolInfo={pool} param={index + 1} />
+                    <PoolCard key={index} poolInfo={pool} param={pool.pair} />
                 ))}
             </Box>
         </Container>

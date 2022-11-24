@@ -14,7 +14,8 @@ const useStyles = makeStyles((theme: any) => ({
     },
 }));
 
-export default function Part4() {
+export default function Part4(props: any) {
+    const { imga, imgb, namea, nameb } = props;
     const classes = useStyles();
 
     return (
@@ -57,16 +58,12 @@ export default function Part4() {
                         Total Supply
                     </Typography>
                     <Stack direction={'row'} alignItems="center" gap={1}>
-                        <img src={b} alt="" width={25} height={25} />
-                        <Typography variant={'h6'}>0.056432 USDC</Typography>
+                        <img src={imga} alt="" width={25} height={25} style={{ borderRadius: '50%' }} />
+                        <Typography variant={'h6'}>0.056432 {namea}</Typography>
                     </Stack>
                     <Stack direction={'row'} alignItems="center" gap={1}>
-                        <img src={a} alt="" width={25} height={25} />
-                        <Typography variant={'h6'}>0 Aptos</Typography>
-                    </Stack>
-                    <Stack direction={'row'} alignItems="center" gap={1}>
-                        <img src={b} alt="" width={25} height={25} />
-                        <Typography variant={'h6'}>0 SLP</Typography>
+                        <img src={imgb} alt="" width={25} height={25} style={{ borderRadius: '50%' }} />
+                        <Typography variant={'h6'}>0 {nameb}</Typography>
                     </Stack>
                 </Box>
                 <Box sx={{ textAlign: 'right', display: 'flex', flexDirection: 'column', gap: 1 }}>
@@ -91,12 +88,12 @@ export default function Part4() {
                         Total Debt
                     </Typography>
                     <Stack direction={'row'} alignItems="center" gap={1}>
-                        <img src={b} alt="" width={25} height={25} />
-                        <Typography variant={'h6'}>0.056432 USDC</Typography>
+                        <img src={imga} alt="" width={25} height={25} style={{ borderRadius: '50%' }} />
+                        <Typography variant={'h6'}>0.056432 {namea}</Typography>
                     </Stack>
                     <Stack direction={'row'} alignItems="center" gap={1}>
-                        <img src={a} alt="" width={25} height={25} />
-                        <Typography variant={'h6'}>0 Aptos</Typography>
+                        <img src={imgb} alt="" width={25} height={25} style={{ borderRadius: '50%' }} />
+                        <Typography variant={'h6'}>0 {nameb}</Typography>
                     </Stack>
                 </Box>
                 <Box sx={{ textAlign: 'right', display: 'flex', flexDirection: 'column', gap: 1 }}>
@@ -120,12 +117,12 @@ export default function Part4() {
                         Position Value (after swap)
                     </Typography>
                     <Stack direction={'row'} alignItems="center" gap={1}>
-                        <img src={b} alt="" width={25} height={25} />
-                        <Typography variant={'h6'}>0.056432 USDC</Typography>
+                        <img src={imga} alt="" width={25} height={25} style={{ borderRadius: '50%' }} />
+                        <Typography variant={'h6'}>0.056432 {namea}</Typography>
                     </Stack>
                     <Stack direction={'row'} alignItems="center" gap={1}>
-                        <img src={a} alt="" width={25} height={25} />
-                        <Typography variant={'h6'}>0 Aptos</Typography>
+                        <img src={imgb} alt="" width={25} height={25} style={{ borderRadius: '50%' }} />
+                        <Typography variant={'h6'}>0 {nameb}</Typography>
                     </Stack>
                 </Box>
                 <Box sx={{ textAlign: 'right', display: 'flex', flexDirection: 'column', gap: 1 }}>

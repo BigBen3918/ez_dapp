@@ -1,5 +1,6 @@
 import React from 'react';
 import { Box, Typography, Stack } from '@mui/material';
+import { useParams } from 'react-router-dom';
 import { makeStyles } from '@mui/styles';
 import Container from '../../components/container';
 import Part1 from './components/part1';
@@ -7,8 +8,11 @@ import Part2 from './components/part2';
 import Part3 from './components/part3';
 import Part4 from './components/part4';
 
-import a from '../../asset/icons/Aptos.png';
-import b from '../../asset/icons/crypto-usdc.png';
+import BTCIcon from '../../asset/icons/crypto-btc.png';
+import EthereumIcon from '../../asset/icons/crypto-ethereum.png';
+import USDCIcon from '../../asset/icons/crypto-usdc.png';
+import USDTIcon from '../../asset/icons/crypto-usdt.png';
+import DaiIcon from '../../asset/icons/crypto-dai.svg';
 
 const useStyles = makeStyles((theme: any) => ({
     root: {
@@ -58,7 +62,21 @@ const useStyles = makeStyles((theme: any) => ({
 }));
 
 export default function Invest() {
+    const { poolid } = useParams();
     const classes = useStyles();
+
+    const coins = {
+        0: { img: BTCIcon, name: 'BTC' },
+        1: { img: EthereumIcon, name: 'ETH' },
+        2: { img: DaiIcon, name: 'DAI' },
+        3: { img: USDCIcon, name: 'USDC' },
+        4: { img: USDTIcon, name: 'USDT' },
+        5: { img: USDCIcon, name: 'ceUSDC' },
+    };
+
+    const strArr: any = React.useMemo(() => {
+        return poolid?.split('-');
+    }, [poolid]);
 
     return (
         <Container>
@@ -69,12 +87,14 @@ export default function Invest() {
                             <Stack
                                 direction={'row'}
                                 alignItems={'center'}
-                                sx={{ '& img': { width: '40px', height: '40px' } }}
+                                sx={{ '& img': { width: '40px', height: '40px', borderRadius: '50%' } }}
                             >
-                                <img src={a} alt="" />
-                                <img src={b} alt="" style={{ marginLeft: '-15px' }} />
+                                <img src={coins[Number(strArr[0])].img} alt="" />
+                                <img src={coins[Number(strArr[1])].img} alt="" style={{ marginLeft: '-15px' }} />
                             </Stack>
-                            <Typography variant="h4">Aptos/USDC</Typography>
+                            <Typography variant="h4">
+                                {coins[Number(strArr[0])].name}/{coins[Number(strArr[1])].name}
+                            </Typography>
                         </Stack>
                         <Typography variant="subtitle1">Yield farming on Sushiswap</Typography>
                     </Stack>
@@ -115,9 +135,19 @@ export default function Invest() {
                             },
                         }}
                     >
-                        <Part1 />
+                        <Part1
+                            imga={coins[Number(strArr[0])].img}
+                            imgb={coins[Number(strArr[1])].img}
+                            namea={coins[Number(strArr[0])].name}
+                            nameb={coins[Number(strArr[1])].name}
+                        />
                         <Part2 />
-                        <Part3 />
+                        <Part3
+                            imga={coins[Number(strArr[0])].img}
+                            imgb={coins[Number(strArr[1])].img}
+                            namea={coins[Number(strArr[0])].name}
+                            nameb={coins[Number(strArr[1])].name}
+                        />
                     </Box>
                     <Box
                         sx={{
@@ -129,7 +159,12 @@ export default function Invest() {
                             },
                         }}
                     >
-                        <Part4 />
+                        <Part4
+                            imga={coins[Number(strArr[0])].img}
+                            imgb={coins[Number(strArr[1])].img}
+                            namea={coins[Number(strArr[0])].name}
+                            nameb={coins[Number(strArr[1])].name}
+                        />
                     </Box>
                 </Box>
             </Box>

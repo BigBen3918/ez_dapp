@@ -96,7 +96,8 @@ const StyledSwitch = styled(Switch)(({ theme }) => ({
     },
 }));
 
-export default function Part1() {
+export default function Part1(props: any) {
+    const { imga, imgb, namea, nameb } = props;
     const classes = useStyles();
     const [value, setValue] = React.useState('');
     const [alignment, setAlignment] = React.useState<string>('1');

@@ -16,7 +16,8 @@ const useStyles = makeStyles((theme: any) => ({
     },
 }));
 
-export default function Part3() {
+export default function Part3(props: any) {
+    const { imga, imgb, namea, nameb } = props;
     const classes = useStyles();
     const [debt, setDebt] = React.useState(75);
     const [rectCheck, setRectCheck] = React.useState(false);
