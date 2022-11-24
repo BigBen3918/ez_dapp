@@ -65,9 +65,34 @@ export default function TVL() {
         <Container>
             <Box className={classes.root}>
                 <Typography variant="h2">Pool TVL</Typography>
-                <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '25px 0' }}>
+                <Box
+                    sx={{
+                        display: 'flex',
+                        justifyContent: 'space-between',
+                        alignItems: 'center',
+                        padding: '25px 0',
+                        '@media(max-width: 768px)': {
+                            justifyContent: 'center',
+                            flexDirection: 'column',
+                            '& h5': {
+                                textAlign: 'center',
+                            },
+                        },
+                    }}
+                >
                     <Typography sx={{ fontSize: '32px', fontWeight: 600 }}>Protocol TVL</Typography>
-                    <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 5 }}>
+                    <Box
+                        sx={{
+                            display: 'flex',
+                            justifyContent: 'center',
+                            alignItems: 'center',
+                            gap: 5,
+                            '@media(max-width: 450px)': {
+                                flexDirection: 'column',
+                                gap: 1,
+                            },
+                        }}
+                    >
                         <Box sx={{ textAlign: 'right' }}>
                             <Typography variant="subtitle1">Protocol pools TVL</Typography>
                             <Typography variant="h5">$4,558,529.50</Typography>
@@ -84,9 +109,41 @@ export default function TVL() {
                         <ProtocolModal title={item} key={index} />
                     ))}
                 </Box>
-                <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '25px 0' }}>
-                    <Typography sx={{ fontSize: '32px', fontWeight: 600 }}>Pool TVL</Typography>
-                    <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 5 }}>
+                <Box
+                    sx={{
+                        display: 'flex',
+                        justifyContent: 'space-between',
+                        alignItems: 'center',
+                        padding: '25px 0',
+                        '@media(max-width: 768px)': {
+                            justifyContent: 'center',
+                            flexDirection: 'column',
+                            '& h5': {
+                                textAlign: 'center',
+                            },
+                        },
+                    }}
+                >
+                    <Typography
+                        sx={{
+                            fontSize: '32px',
+                            fontWeight: 600,
+                        }}
+                    >
+                        Pool TVL
+                    </Typography>
+                    <Box
+                        sx={{
+                            display: 'flex',
+                            justifyContent: 'center',
+                            alignItems: 'center',
+                            gap: 5,
+                            '@media(max-width: 450px)': {
+                                flexDirection: 'column',
+                                gap: 1,
+                            },
+                        }}
+                    >
                         <Box sx={{ textAlign: 'right' }}>
                             <Typography variant="subtitle1">Protocol pools TVL</Typography>
                             <Typography variant="h5">$4,558,529.50</Typography>

@@ -13,8 +13,12 @@ export default function PoolModal(props: any) {
                 sx={{
                     background: '#342D55',
                     position: 'relative',
-                    padding: '30px 50px',
+                    padding: '30px',
                     borderRadius: '13px',
+                    '@media(max-width: 350px)': {
+                        width: '100%',
+                        padding: '20px',
+                    },
                 }}
             >
                 <Typography variant="subtitle1">Liquidity Providing</Typography>

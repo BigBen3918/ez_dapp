@@ -24,6 +24,12 @@ export default function ProtocolModal(props: any) {
                 position: 'relative',
                 padding: '30px 50px',
                 borderRadius: '13px',
+                minWidth: '300px',
+                '@media(max-width: 350px)': {
+                    minWidth: 'unset',
+                    width: '100%',
+                    padding: '20px',
+                },
             }}
         >
             <Typography variant="subtitle1">{title}</Typography>
