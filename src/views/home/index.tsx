@@ -575,7 +575,7 @@ function Home() {
                     </Box>
                 </Box>
                 <Box className={classes.part5}>
-                    <Typography variant="h3">Lend with Homora V2</Typography>
+                    <Typography variant="h3">Lend with EZ V2</Typography>
                     <Typography variant="subtitle1">Earn more than HODLing in your wallets</Typography>
                     <Grid container spacing={4}>
                         {coins.map((item: any, index: any) => (
