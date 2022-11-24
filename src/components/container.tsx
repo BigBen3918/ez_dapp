@@ -5,7 +5,7 @@ import { makeStyles } from '@mui/styles';
 const useStyles = makeStyles((theme: any) => ({
     root: {
         width: '100%',
-        padding: '50px',
+        padding: '30px',
         [theme.breakpoints.down('sm')]: {
             padding: '0',
         },

@@ -27,7 +27,6 @@ const useStyles = makeStyles((theme: any) => ({
         },
     },
     part1: {
-        marginTop: '30px',
         display: 'flex',
         alignItems: 'center',
         [theme.breakpoints.down('md')]: {
@@ -40,7 +39,7 @@ const useStyles = makeStyles((theme: any) => ({
         width: '100%',
         backgroundImage: 'linear-gradient(93.57deg, #543DFB 0.71%, #F76CC5 50.59%, #FF4848 97.83%)',
         borderRadius: '10px',
-        marginBottom: '100px',
+        marginBottom: '50px',
         '& > div:nth-child(1)': {
             display: 'flex',
             flexDirection: 'column',
@@ -105,9 +104,9 @@ const useStyles = makeStyles((theme: any) => ({
             display: 'flex',
             justifyContent: 'flex-end',
             '& > img': {
-                width: '80%',
+                width: '70%',
                 [theme.breakpoints.down('md')]: {
-                    width: '100%',
+                    display: 'none',
                 },
                 marginTop: '-40px',
             },
@@ -279,7 +278,7 @@ const useStyles = makeStyles((theme: any) => ({
         },
     },
     part6: {
-        marginTop: '100px',
+        marginTop: '80px',
         background: '#342D55',
         width: '100%',
         padding: '50px',
@@ -329,7 +328,7 @@ const useStyles = makeStyles((theme: any) => ({
 }));
 
 const slide_settings = {
-    dots: false,
+    dots: true,
     infinite: false,
     speed: 500,
     slidesToShow: 4,
