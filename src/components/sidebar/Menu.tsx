@@ -9,7 +9,6 @@ import FarmIcon from '../../asset/icons/farm.svg';
 import DocsIcon from '../../asset/icons/docs.svg';
 import LendIcon from '../../asset/icons/dashboard.svg';
 import GovernIcon from '../../asset/icons/govern.svg';
-import Invest from '../../asset/icons/invest.svg';
 import { Typography } from '@mui/material';
 
 const useStyles = makeStyles((theme: any) => ({
