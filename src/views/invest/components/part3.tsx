@@ -145,7 +145,7 @@ export default function Part3() {
                     <img src={a} alt="" style={{ width: '50px', height: '50px' }} />
                     <Stack direction={'column'}>
                         <Typography variant="h5" sx={{ fontSize: '22px', fontWeight: 700 }}>
-                            102.19 DAI
+                            102.19 Aptos
                         </Typography>
                         <Typography variant="h6">-$102.45</Typography>
                     </Stack>
@@ -154,7 +154,7 @@ export default function Part3() {
                     <img src={b} alt="" style={{ width: '50px', height: '50px' }} />
                     <Stack direction={'column'}>
                         <Typography variant="h5" sx={{ fontSize: '22px', fontWeight: 700 }}>
-                            102.19 DAI
+                            102.19 USDC
                         </Typography>
                         <Typography variant="h6">-$102.45</Typography>
                     </Stack>
