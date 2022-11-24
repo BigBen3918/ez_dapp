@@ -26,20 +26,31 @@ const useStyles = makeStyles((theme: any) => ({
             justifyContent: 'center',
             alignItems: 'center',
             gap: '30px',
+            flexWrap: 'wrap',
             '& h6': {
                 fontSize: '18px',
                 opacity: '.6',
             },
             '& > div:first-child': {
                 position: 'relative',
-                flex: '1 1 50%',
+                flex: '1',
                 background: '#342D55',
                 borderRadius: '13px',
+                minWidth: '600px',
+                [theme.breakpoints.down('md')]: {
+                    minWidth: 'unset',
+                    width: '100%',
+                },
                 '& .header': {
                     display: 'flex',
                     justifyContent: 'space-between',
                     alignItems: 'center',
                     gap: '10px',
+                    [theme.breakpoints.down('sm')]: {
+                        flexWrap: 'wrap',
+                        justifyContent: 'center',
+                        textAlign: 'center',
+                    },
                     padding: '50px',
                     '& h4': {
                         fontSize: '40px',
@@ -51,6 +62,11 @@ const useStyles = makeStyles((theme: any) => ({
                     justifyContent: 'space-between',
                     alignItems: 'center',
                     gap: '10px',
+                    [theme.breakpoints.down('sm')]: {
+                        flexWrap: 'wrap',
+                        justifyContent: 'center',
+                        textAlign: 'center',
+                    },
                     padding: '30px 50px',
                     '& p': {
                         fontSize: '18px',
@@ -60,9 +76,14 @@ const useStyles = makeStyles((theme: any) => ({
             },
             '& > div:last-child': {
                 position: 'relative',
-                flex: '1 1 50%',
+                flex: '1',
                 background: '#342D55',
                 borderRadius: '13px',
+                minWidth: '600px',
+                [theme.breakpoints.down('md')]: {
+                    minWidth: 'unset',
+                    width: '100%',
+                },
                 '& .header': {
                     display: 'flex',
                     justifyContent: 'space-between',
@@ -77,6 +98,14 @@ const useStyles = makeStyles((theme: any) => ({
                     gap: '10px',
                     padding: '50px',
                     textAlign: 'center',
+                    [theme.breakpoints.down('sm')]: {
+                        padding: '30px',
+                        textAlign: 'center',
+                    },
+                    '@media(max-width: 450px)': {
+                        flexDirection: 'column',
+                        justifyContent: 'center',
+                    },
                     '& h4': {
                         fontSize: '32px',
                         fontWeight: 600,
@@ -88,6 +117,11 @@ const useStyles = makeStyles((theme: any) => ({
             borderRadius: '13px',
             marginTop: '50px',
             background: '#342D55',
+            '& h4': {
+                [theme.breakpoints.down('sm')]: {
+                    fontSize: '25px',
+                },
+            },
             '& h6': {
                 padding: '50px',
                 fontSize: '18px',
@@ -164,6 +198,7 @@ export default function Position() {
                             flexDirection: 'column',
                             justifyContent: 'center',
                             alignItems: 'center',
+                            textAlign: 'center',
                             p: 10,
                             '& img': {
                                 sm: { width: '30%' },
