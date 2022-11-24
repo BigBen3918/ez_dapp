@@ -13,7 +13,12 @@ import part1_img from '../../asset/icons/IDO.png';
 import part2_img from '../../asset/icons/wallet.png';
 import part3_img from '../../asset/icons/Private Key.png';
 import SmartContract from '../../asset/icons/Smart_Contract.png';
-import icon from '../../asset/icons/crypto-usdc.png';
+
+import EthereumIcon from '../../asset/icons/crypto-ethereum.png';
+import USDCIcon from '../../asset/icons/crypto-usdc.png';
+import USDTIcon from '../../asset/icons/crypto-usdt.png';
+import BTCIcon from '../../asset/icons/crypto-btc.png';
+import DaiIcon from '../../asset/icons/crypto-dai.svg';
 
 const useStyles = makeStyles((theme: any) => ({
     root: {
@@ -24,6 +29,12 @@ const useStyles = makeStyles((theme: any) => ({
         alignItems: 'center',
         '& .MuiTypography-root': {
             color: '#FFF',
+        },
+        '& .slick-dots button::before': {
+            color: 'white',
+        },
+        '& .slick-active button::before': {
+            color: 'white!important',
         },
     },
     part1: {
@@ -39,13 +50,13 @@ const useStyles = makeStyles((theme: any) => ({
         width: '100%',
         backgroundImage: 'linear-gradient(93.57deg, #543DFB 0.71%, #F76CC5 50.59%, #FF4848 97.83%)',
         borderRadius: '10px',
-        marginBottom: '50px',
+        marginBottom: '20px',
         '& > div:nth-child(1)': {
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'space-around',
             flex: '1 1 65%',
-            padding: '45px',
+            padding: '30px',
             [theme.breakpoints.down('sm')]: {
                 padding: '15px',
             },
@@ -55,7 +66,7 @@ const useStyles = makeStyles((theme: any) => ({
                 fontWeight: '700',
                 lineHeight: '69px',
                 letterSpacing: '-0.005em',
-                padding: '30px 0',
+                padding: '10px 0',
                 [theme.breakpoints.down('md')]: {
                     fontSize: '35px',
                 },
@@ -118,7 +129,7 @@ const useStyles = makeStyles((theme: any) => ({
         alignItems: 'center',
         gap: '20px',
         width: '100%',
-        marginTop: '30px',
+        marginTop: '20px',
         [theme.breakpoints.down('lg')]: {
             flexWrap: 'wrap',
         },
@@ -154,7 +165,7 @@ const useStyles = makeStyles((theme: any) => ({
         },
     },
     part3: {
-        marginTop: '100px',
+        marginTop: '60px',
         textAlign: 'center',
         width: '100%',
         '& > h6': {
@@ -377,6 +388,49 @@ const slide_settings = {
 function Home() {
     const classes = useStyles();
 
+    const coins = [
+        {
+            name: 'BTC',
+            img: BTCIcon,
+        },
+        {
+            name: 'ETH',
+            img: EthereumIcon,
+        },
+        {
+            name: 'DAI',
+            img: DaiIcon,
+        },
+        {
+            name: 'USDC',
+            img: USDCIcon,
+        },
+        {
+            name: 'USDT',
+            img: USDTIcon,
+        },
+        {
+            name: 'ceUSDC',
+            img: USDCIcon,
+        },
+    ];
+
+    const poolData = React.useMemo(() => {
+        let bump: any = [];
+        for (var i = 0; i < coins.length; i++) {
+            for (var j = i - 1; j >= 0; j--) {
+                let obj: Object = {
+                    aTokenIcon: coins[i].img,
+                    bTokenIcon: coins[j].img,
+                    aname: coins[i].name,
+                    bname: coins[j].name,
+                };
+                bump.push(obj);
+            }
+        }
+        return bump;
+    }, []);
+
     return (
         <Container>
             <Box className={classes.root}>
@@ -389,11 +443,7 @@ function Home() {
                         </Typography>
                         <Box>
                             <Paper>
-                                <Typography variant="subtitle1">Multi Chain TVL</Typography>
-                                <Typography variant="h2">$818,768.67</Typography>
-                            </Paper>
-                            <Paper>
-                                <Typography variant="subtitle1">Ethereum TVL</Typography>
+                                <Typography variant="subtitle1">Aptos TVL</Typography>
                                 <Typography variant="h2">$818,768.67</Typography>
                             </Paper>
                         </Box>
@@ -409,7 +459,7 @@ function Home() {
                                 display: 'flex',
                                 justifyContent: 'space-around',
                                 flexDirection: 'column',
-                                p: 5,
+                                p: 3,
                                 width: { md: '70%', sm: '80%', xs: '100%' },
                                 zIndex: 2,
                             }}
@@ -432,7 +482,7 @@ function Home() {
                                 display: 'flex',
                                 justifyContent: 'space-around',
                                 flexDirection: 'column',
-                                p: 5,
+                                p: 3,
                                 zIndex: 2,
                                 width: { md: '70%', sm: '80%', xs: '100%' },
                             }}
@@ -452,7 +502,7 @@ function Home() {
                 </Box>
                 <Box className={classes.part3}>
                     <Typography variant="h3" sx={{ fontSize: { xs: '30px', sm: '35px', md: '45px' } }}>
-                        Why Farm with Homora V2?
+                        Why Farm with EZ V2?
                     </Typography>
                     <Typography variant="subtitle1">High Yield. High Security. Quality Pools.</Typography>
                     <Box>
@@ -489,22 +539,33 @@ function Home() {
                     </Box>
                     <Box sx={{ paddingTop: '50px' }}>
                         <Slider {...slide_settings}>
-                            {new Array(6).fill(0).map((item: any, index: any) => (
+                            {poolData.map((item: any, index: any) => (
                                 <Box sx={{ padding: '20px' }} key={index}>
                                     <Box className="slide_card">
-                                        <Typography variant="subtitle1">Sushiswap</Typography>
+                                        <Typography variant="subtitle1">Liquidswap</Typography>
                                         <Stack direction={'row'} alignContent={'center'} gap="20px">
                                             <Stack direction={'row'} alignItems="center" justifyContent={'center'}>
-                                                <img src={icon} alt="" style={{ width: '35px', height: '35px' }} />
                                                 <img
-                                                    src={icon}
+                                                    src={item.aTokenIcon}
                                                     alt=""
-                                                    style={{ width: '35px', height: '35px', marginLeft: '-13px' }}
+                                                    style={{ width: '35px', height: '35px', borderRadius: '50%' }}
+                                                />
+                                                <img
+                                                    src={item.bTokenIcon}
+                                                    alt=""
+                                                    style={{
+                                                        width: '35px',
+                                                        height: '35px',
+                                                        borderRadius: '50%',
+                                                        marginLeft: '-13px',
+                                                    }}
                                                 />
                                             </Stack>
                                             <Common_FillButton content="1.8x" padding="10px 20px" />
                                         </Stack>
-                                        <Typography variant="h5">Sushi-ETH</Typography>
+                                        <Typography variant="h5">
+                                            {item.aname}-{item.bname}
+                                        </Typography>
                                         <Typography variant="subtitle1">From 18.56% to</Typography>
                                         <Typography variant="h3">32.45% APR</Typography>
                                     </Box>
@@ -517,13 +578,13 @@ function Home() {
                     <Typography variant="h3">Lend with Homora V2</Typography>
                     <Typography variant="subtitle1">Earn more than HODLing in your wallets</Typography>
                     <Grid container spacing={4}>
-                        {new Array(6).fill(12).map((item: any, index: any) => (
-                            <Grid item xs={item} sm={item} md={item / 2} lg={item / 3} key={index}>
+                        {coins.map((item: any, index: any) => (
+                            <Grid item xs={12} sm={12} md={6} lg={4} key={index}>
                                 <Box className="card">
-                                    <img src={icon} alt="" />
+                                    <img src={item.img} alt="" />
                                     <Box>
                                         <Typography variant="subtitle1">Lend</Typography>
-                                        <Typography variant="h5">USDT</Typography>
+                                        <Typography variant="h5">{item.name}</Typography>
                                     </Box>
                                     <Box>
                                         <Typography variant="subtitle1">APY</Typography>
