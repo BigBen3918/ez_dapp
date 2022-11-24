@@ -62,7 +62,7 @@ const useStyles = makeStyles((theme: any) => ({
             },
             '& > h1': {
                 fontStyle: 'normal',
-                fontSize: '56px',
+                fontSize: '46px',
                 fontWeight: '700',
                 lineHeight: '69px',
                 letterSpacing: '-0.005em',
@@ -115,7 +115,7 @@ const useStyles = makeStyles((theme: any) => ({
             display: 'flex',
             justifyContent: 'flex-end',
             '& > img': {
-                width: '70%',
+                width: '50%',
                 [theme.breakpoints.down('md')]: {
                     display: 'none',
                 },
@@ -446,6 +446,10 @@ function Home() {
                                 <Typography variant="subtitle1">Aptos TVL</Typography>
                                 <Typography variant="h2">$818,768.67</Typography>
                             </Paper>
+                            <Paper>
+                                <Typography variant="subtitle1">Sui TVL</Typography>
+                                <Typography variant="h2">$0</Typography>
+                            </Paper>
                         </Box>
                     </Box>
                     <Box>
@@ -502,7 +506,7 @@ function Home() {
                 </Box>
                 <Box className={classes.part3}>
                     <Typography variant="h3" sx={{ fontSize: { xs: '30px', sm: '35px', md: '45px' } }}>
-                        Why Farm with EZ V2?
+                        Why Farm with EZ?
                     </Typography>
                     <Typography variant="subtitle1">High Yield. High Security. Quality Pools.</Typography>
                     <Box>
@@ -575,7 +579,7 @@ function Home() {
                     </Box>
                 </Box>
                 <Box className={classes.part5}>
-                    <Typography variant="h3">Lend with EZ V2</Typography>
+                    <Typography variant="h3">Lend with EZ</Typography>
                     <Typography variant="subtitle1">Earn more than HODLing in your wallets</Typography>
                     <Grid container spacing={4}>
                         {coins.map((item: any, index: any) => (
