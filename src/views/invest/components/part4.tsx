@@ -57,15 +57,15 @@ export default function Part4() {
                         Total Supply
                     </Typography>
                     <Stack direction={'row'} alignItems="center" gap={1}>
-                        <img src={a} alt="" width={25} height={25} />
-                        <Typography variant={'h6'}>0.056432 ETH</Typography>
+                        <img src={b} alt="" width={25} height={25} />
+                        <Typography variant={'h6'}>0.056432 USDC</Typography>
                     </Stack>
                     <Stack direction={'row'} alignItems="center" gap={1}>
                         <img src={a} alt="" width={25} height={25} />
-                        <Typography variant={'h6'}>0 DAI</Typography>
+                        <Typography variant={'h6'}>0 Aptos</Typography>
                     </Stack>
                     <Stack direction={'row'} alignItems="center" gap={1}>
-                        <img src={a} alt="" width={25} height={25} />
+                        <img src={b} alt="" width={25} height={25} />
                         <Typography variant={'h6'}>0 SLP</Typography>
                     </Stack>
                 </Box>
@@ -91,12 +91,12 @@ export default function Part4() {
                         Total Debt
                     </Typography>
                     <Stack direction={'row'} alignItems="center" gap={1}>
-                        <img src={a} alt="" width={25} height={25} />
-                        <Typography variant={'h6'}>0.056432 ETH</Typography>
+                        <img src={b} alt="" width={25} height={25} />
+                        <Typography variant={'h6'}>0.056432 USDC</Typography>
                     </Stack>
                     <Stack direction={'row'} alignItems="center" gap={1}>
                         <img src={a} alt="" width={25} height={25} />
-                        <Typography variant={'h6'}>0 DAI</Typography>
+                        <Typography variant={'h6'}>0 Aptos</Typography>
                     </Stack>
                 </Box>
                 <Box sx={{ textAlign: 'right', display: 'flex', flexDirection: 'column', gap: 1 }}>
@@ -120,12 +120,12 @@ export default function Part4() {
                         Position Value (after swap)
                     </Typography>
                     <Stack direction={'row'} alignItems="center" gap={1}>
-                        <img src={a} alt="" width={25} height={25} />
-                        <Typography variant={'h6'}>0.056432 ETH</Typography>
+                        <img src={b} alt="" width={25} height={25} />
+                        <Typography variant={'h6'}>0.056432 USDC</Typography>
                     </Stack>
                     <Stack direction={'row'} alignItems="center" gap={1}>
                         <img src={a} alt="" width={25} height={25} />
-                        <Typography variant={'h6'}>0 DAI</Typography>
+                        <Typography variant={'h6'}>0 Aptos</Typography>
                     </Stack>
                 </Box>
                 <Box sx={{ textAlign: 'right', display: 'flex', flexDirection: 'column', gap: 1 }}>
