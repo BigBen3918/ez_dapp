@@ -2,7 +2,7 @@ import React from 'react';
 import { Box, Typography, Slider, Stack } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 
-import a from '../../../asset/icons/crypto-ethereum.png';
+import a from '../../../asset/icons/Aptos.png';
 import b from '../../../asset/icons/crypto-usdc.png';
 
 const useStyles = makeStyles((theme: any) => ({

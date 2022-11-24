@@ -12,6 +12,9 @@ import {
 import { makeStyles } from '@mui/styles';
 import { styled } from '@mui/system';
 
+import a from '../../../asset/icons/Aptos.png';
+import b from '../../../asset/icons/crypto-usdc.png';
+
 const useStyles = makeStyles(() => ({
     root: {
         marginBottom: '20px',
@@ -92,9 +95,6 @@ const StyledSwitch = styled(Switch)(({ theme }) => ({
     },
 }));
 
-import a from '../../../asset/icons/crypto-ethereum.png';
-import b from '../../../asset/icons/crypto-usdc.png';
-
 export default function Part1() {
     const classes = useStyles();
     const [value, setValue] = React.useState('');
@@ -121,10 +121,10 @@ export default function Part1() {
                     <StyledSwitch />
                     <Stack direction={'row'} alignItems={'center'} gap={1}>
                         <img src={a} alt="" style={{ width: '25px', height: '25px' }} />
-                        <Typography sx={{ fontWeight: 400, fontSize: '18px' }}>Sushi</Typography>
+                        <Typography sx={{ fontWeight: 400, fontSize: '18px' }}>Aptos</Typography>
                     </Stack>
                 </Stack>
-                <Typography variant="subtitle1">Balance: 0.00 SUSHI</Typography>
+                <Typography variant="subtitle1">Balance: 0.00 Aptos</Typography>
             </Box>
             <Box
                 sx={{
@@ -138,10 +138,10 @@ export default function Part1() {
                     <StyledSwitch />
                     <Stack direction={'row'} alignItems={'center'} gap={1}>
                         <img src={b} alt="" style={{ width: '25px', height: '25px' }} />
-                        <Typography sx={{ fontWeight: 400, fontSize: '18px' }}>Eth</Typography>
+                        <Typography sx={{ fontWeight: 400, fontSize: '18px' }}>USDC</Typography>
                     </Stack>
                 </Stack>
-                <Typography variant="subtitle1">Balance: 0.00 ETH</Typography>
+                <Typography variant="subtitle1">Balance: 0.00 USDC</Typography>
             </Box>
             <Box
                 sx={{
@@ -155,7 +155,7 @@ export default function Part1() {
                     value={value}
                     placeholder="$0.00"
                     onChange={(e: any) => setValue(e.target.value)}
-                    endAdornment={<InputAdornment position="end">ETH</InputAdornment>}
+                    endAdornment={<InputAdornment position="end">USDC</InputAdornment>}
                     sx={{ width: '100%' }}
                 />
             </Box>

@@ -7,7 +7,7 @@ import Part2 from './components/part2';
 import Part3 from './components/part3';
 import Part4 from './components/part4';
 
-import a from '../../asset/icons/crypto-ethereum.png';
+import a from '../../asset/icons/Aptos.png';
 import b from '../../asset/icons/crypto-usdc.png';
 
 const useStyles = makeStyles((theme: any) => ({
@@ -74,7 +74,7 @@ export default function Invest() {
                                 <img src={a} alt="" />
                                 <img src={b} alt="" style={{ marginLeft: '-15px' }} />
                             </Stack>
-                            <Typography variant="h4">SUSHI/ETH</Typography>
+                            <Typography variant="h4">Aptos/USDC</Typography>
                         </Stack>
                         <Typography variant="subtitle1">Yield farming on Sushiswap</Typography>
                     </Stack>
