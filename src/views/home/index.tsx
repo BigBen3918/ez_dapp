@@ -154,7 +154,7 @@ const useStyles = makeStyles((theme: any) => ({
         },
     },
     part3: {
-        marginTop: '140px',
+        marginTop: '100px',
         textAlign: 'center',
         width: '100%',
         '& > h6': {
@@ -196,7 +196,7 @@ const useStyles = makeStyles((theme: any) => ({
     },
     part4: {
         width: '100%',
-        marginTop: '100px',
+        marginTop: '80px',
         '& .title': {
             display: 'flex',
             justifyContent: 'space-between',
@@ -240,7 +240,7 @@ const useStyles = makeStyles((theme: any) => ({
     },
     part5: {
         width: '100%',
-        marginTop: '100px',
+        marginTop: '80px',
         textAlign: 'center',
         '& > h3': {
             padding: '20px 0',
