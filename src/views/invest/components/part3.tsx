@@ -115,11 +115,11 @@ export default function Part3(props: any) {
                         Current Price
                     </Typography>
                     <Stack direction="row" alignItems={'center'} gap={1}>
-                        <img src={a} alt="" style={{ width: '20px', height: '20px' }} />
+                        <img src={imga} alt="" style={{ width: '20px', height: '20px', borderRadius: '50%' }} />
                         <Typography variant="h6">$1.00</Typography>
                     </Stack>
                     <Stack direction="row" alignItems={'center'} gap={1}>
-                        <img src={b} alt="" style={{ width: '20px', height: '20px' }} />
+                        <img src={imgb} alt="" style={{ width: '20px', height: '20px', borderRadius: '50%' }} />
                         <Typography variant="h6">$1,6403</Typography>
                     </Stack>
                 </Stack>
@@ -143,19 +143,19 @@ export default function Part3(props: any) {
                 }}
             >
                 <Stack direction={'row'} alignItems="center" gap={2}>
-                    <img src={a} alt="" style={{ width: '50px', height: '50px' }} />
+                    <img src={imga} alt="" style={{ width: '50px', height: '50px', borderRadius: '50%' }} />
                     <Stack direction={'column'}>
                         <Typography variant="h5" sx={{ fontSize: '22px', fontWeight: 700 }}>
-                            102.19 Aptos
+                            102.19 {namea}
                         </Typography>
                         <Typography variant="h6">-$102.45</Typography>
                     </Stack>
                 </Stack>
                 <Stack direction={'row'} alignItems="center" gap={2}>
-                    <img src={b} alt="" style={{ width: '50px', height: '50px' }} />
+                    <img src={imgb} alt="" style={{ width: '50px', height: '50px', borderRadius: '50%' }} />
                     <Stack direction={'column'}>
                         <Typography variant="h5" sx={{ fontSize: '22px', fontWeight: 700 }}>
-                            102.19 USDC
+                            102.19 {nameb}
                         </Typography>
                         <Typography variant="h6">-$102.45</Typography>
                     </Stack>
