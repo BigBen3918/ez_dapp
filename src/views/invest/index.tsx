@@ -17,7 +17,6 @@ import Container from '../../components/container';
 
 import a from '../../asset/icons/crypto-ethereum.png';
 import b from '../../asset/icons/crypto-usdc.png';
-import { Common_FillButton } from '../../components/button';
 
 const useStyles = makeStyles((theme: any) => ({
     root: {
@@ -31,6 +30,12 @@ const useStyles = makeStyles((theme: any) => ({
             display: 'flex',
             justifyContent: 'space-between',
             alignItems: 'center',
+            flexWrap: 'wrap',
+            '@media(max-width: 960px)': {
+                flexDirection: 'column',
+                gap: 20,
+                textAlign: 'center',
+            },
         },
         '& .content': {
             display: 'flex',
@@ -212,7 +217,18 @@ export default function Invest() {
                         </Stack>
                         <Typography variant="subtitle1">Yield farming on Sushiswap</Typography>
                     </Stack>
-                    <Stack direction={'row'} alignItems="center" gap={8}>
+                    <Stack
+                        direction={'row'}
+                        alignItems="center"
+                        gap={6}
+                        sx={{
+                            '@media(max-width: 650px)': {
+                                flexDirection: 'column',
+                                gap: 1,
+                                textAlign: 'center',
+                            },
+                        }}
+                    >
                         <Box>
                             <Typography variant="subtitle1">Positions</Typography>
                             <Typography variant="h5">9</Typography>
@@ -228,13 +244,32 @@ export default function Invest() {
                     </Stack>
                 </Box>
                 <Box className={'content'}>
-                    <Box sx={{ flex: '3' }}>
+                    <Box
+                        sx={{
+                            flex: '3',
+                            minWidth: '540px',
+                            '@media(max-width: 600px)': {
+                                minWidth: 'unset',
+                                width: '100%',
+                            },
+                        }}
+                    >
                         <Box className={'modal1'}>
-                            <Typography variant="h4">1. Supply assets</Typography>
+                            <Typography variant="h4" sx={{ '@media(max-width: 450px)': { fontSize: '24px' } }}>
+                                1. Supply assets
+                            </Typography>
                             <Typography variant="subtitle1" sx={{ pt: 2, pb: 3 }}>
                                 Turn on the toggle for the assets you wish to supply in
                             </Typography>
-                            <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', py: 2 }}>
+                            <Box
+                                sx={{
+                                    display: 'flex',
+                                    justifyContent: 'space-between',
+                                    alignItems: 'center',
+                                    py: 2,
+                                    '@media(max-width: 450px)': { flexDirection: 'column' },
+                                }}
+                            >
                                 <Stack direction={'row'} alignItems={'center'} gap={2}>
                                     <StyledSwitch />
                                     <Stack direction={'row'} alignItems={'center'} gap={1}>
@@ -244,7 +279,14 @@ export default function Invest() {
                                 </Stack>
                                 <Typography variant="subtitle1">Balance: 0.00 SUSHI</Typography>
                             </Box>
-                            <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                            <Box
+                                sx={{
+                                    display: 'flex',
+                                    justifyContent: 'space-between',
+                                    alignItems: 'center',
+                                    '@media(max-width: 450px)': { flexDirection: 'column' },
+                                }}
+                            >
                                 <Stack direction={'row'} alignItems={'center'} gap={2}>
                                     <StyledSwitch />
                                     <Stack direction={'row'} alignItems={'center'} gap={1}>
@@ -281,7 +323,14 @@ export default function Invest() {
                                 <ToggleButton value="3">75%</ToggleButton>
                                 <ToggleButton value="4">100%</ToggleButton>
                             </ToggleButtonGroup>
-                            <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                            <Box
+                                sx={{
+                                    display: 'flex',
+                                    justifyContent: 'space-between',
+                                    alignItems: 'center',
+                                    '@media(max-width: 450px)': { flexDirection: 'column' },
+                                }}
+                            >
                                 <Stack direction={'row'} alignItems={'center'} gap={2}>
                                     <StyledSwitch />
                                     <Stack direction={'row'} alignItems={'center'} gap={1}>
@@ -293,8 +342,18 @@ export default function Invest() {
                             </Box>
                         </Box>
                         <Box className={'modal2'}>
-                            <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                                <Typography variant="h4" sx={{ py: 2 }}>
+                            <Box
+                                sx={{
+                                    display: 'flex',
+                                    justifyContent: 'space-between',
+                                    alignItems: 'center',
+                                    '@media(max-width: 576px)': { flexDirection: 'column' },
+                                }}
+                            >
+                                <Typography
+                                    variant="h4"
+                                    sx={{ py: 2, '@media(max-width: 450px)': { fontSize: '24px' } }}
+                                >
                                     2. Set Leverage
                                 </Typography>
                                 <Stack direction="row" justifyContent={'center'} alignItems="center" gap={2}>
@@ -330,7 +389,7 @@ export default function Invest() {
                             </Typography>
                         </Box>
                         <Box className={'modal3'}>
-                            <Typography variant="h4" sx={{ py: 2 }}>
+                            <Typography variant="h4" sx={{ py: 2, '@media(max-width: 450px)': { fontSize: '24px' } }}>
                                 3. Borrow Assets
                             </Typography>
                             <Typography variant="h6">
@@ -347,6 +406,7 @@ export default function Invest() {
                                     justifyContent: 'center',
                                     alignItems: 'center',
                                     position: 'relative',
+                                    '@media(max-width: 500px)': { textAlign: 'center' },
                                 }}
                             >
                                 <Box
@@ -414,7 +474,12 @@ export default function Invest() {
                                     Morbi molestie ac posuere iaculis commodo lectus nec. Vulputate.
                                 </Typography>
                                 <hr />
-                                <Stack direction="row" alignItems={'center'} gap={5} sx={{ pt: 2 }}>
+                                <Stack
+                                    direction="row"
+                                    alignItems={'center'}
+                                    gap={5}
+                                    sx={{ pt: 2, '@media(max-width: 560px)': { flexDirection: 'column', gap: 1 } }}
+                                >
                                     <Typography variant="body1" sx={{ fontSize: '18px' }}>
                                         Current Price
                                     </Typography>
@@ -467,7 +532,16 @@ export default function Invest() {
                             </Box>
                         </Box>
                     </Box>
-                    <Box sx={{ flex: '2' }}>
+                    <Box
+                        sx={{
+                            flex: '2',
+                            minWidth: '450px',
+                            '@media(max-width: 600px)': {
+                                minWidth: 'unset',
+                                width: '100%',
+                            },
+                        }}
+                    >
                         <Box className={'modal4'}>
                             <Typography variant="h4" sx={{ py: 2, fontSize: '24px' }}>
                                 Your Actions
@@ -480,6 +554,10 @@ export default function Invest() {
                                     padding: '23px 45px',
                                     justifyContent: 'center',
                                     borderRadius: '13px',
+                                    '@media(max-width: 500px)': {
+                                        flexDirection: 'column',
+                                        textAlign: 'center',
+                                    },
                                 }}
                             >
                                 <Box sx={{ flex: '1' }}>
