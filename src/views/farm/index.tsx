@@ -87,152 +87,58 @@ function Farm() {
     const classes = useStyles();
     const [alignment, setAlignment] = React.useState<string>('1');
 
-    const testPool: any = [
+    const coins = [
         {
-            aTokenIcon: DaiIcon,
-            bTokenIcon: EthereumIcon,
-            pool_count: '3pools',
-            pool_total: '$787,867,934.61',
-            from_multi: '1.00x',
-            from_percent: '0.46%',
-            max_apr: '0.46%',
-            trade_fee: '0.16%',
-            borrow: '-0.00%',
-            position: '10',
-            acheive: '1.00X',
-            farm_apr: '0.16%',
-            trade_volume: '$60,795,345.28',
-            tvl: '$118,319.89',
+            name: 'BTC',
+            img: BTCIcon,
         },
         {
-            aTokenIcon: DaiIcon,
-            bTokenIcon: EthereumIcon,
-            pool_count: '3pools',
-            pool_total: '$787,867,934.61',
-            from_multi: '1.00x',
-            from_percent: '0.46%',
-            max_apr: '0.46%',
-            trade_fee: '0.16%',
-            borrow: '-0.00%',
-            position: '10',
-            acheive: '1.00X',
-            farm_apr: '0.16%',
-            trade_volume: '$60,795,345.28',
-            tvl: '$118,319.89',
+            name: 'ETH',
+            img: EthereumIcon,
         },
         {
-            aTokenIcon: DaiIcon,
-            bTokenIcon: EthereumIcon,
-            pool_count: '3pools',
-            pool_total: '$787,867,934.61',
-            from_multi: '1.00x',
-            from_percent: '0.46%',
-            max_apr: '0.46%',
-            trade_fee: '0.16%',
-            borrow: '-0.00%',
-            position: '10',
-            acheive: '1.00X',
-            farm_apr: '0.16%',
-            trade_volume: '$60,795,345.28',
-            tvl: '$118,319.89',
+            name: 'DAI',
+            img: DaiIcon,
         },
         {
-            aTokenIcon: DaiIcon,
-            bTokenIcon: EthereumIcon,
-            pool_count: '3pools',
-            pool_total: '$787,867,934.61',
-            from_multi: '1.00x',
-            from_percent: '0.46%',
-            max_apr: '0.46%',
-            trade_fee: '0.16%',
-            borrow: '-0.00%',
-            position: '10',
-            acheive: '1.00X',
-            farm_apr: '0.16%',
-            trade_volume: '$60,795,345.28',
-            tvl: '$118,319.89',
+            name: 'USDC',
+            img: USDCIcon,
         },
         {
-            aTokenIcon: DaiIcon,
-            bTokenIcon: EthereumIcon,
-            pool_count: '3pools',
-            pool_total: '$787,867,934.61',
-            from_multi: '1.00x',
-            from_percent: '0.46%',
-            max_apr: '0.46%',
-            trade_fee: '0.16%',
-            borrow: '-0.00%',
-            position: '10',
-            acheive: '1.00X',
-            farm_apr: '0.16%',
-            trade_volume: '$60,795,345.28',
-            tvl: '$118,319.89',
+            name: 'USDT',
+            img: USDTIcon,
         },
         {
-            aTokenIcon: DaiIcon,
-            bTokenIcon: EthereumIcon,
-            pool_count: '3pools',
-            pool_total: '$787,867,934.61',
-            from_multi: '1.00x',
-            from_percent: '0.46%',
-            max_apr: '0.46%',
-            trade_fee: '0.16%',
-            borrow: '-0.00%',
-            position: '10',
-            acheive: '1.00X',
-            farm_apr: '0.16%',
-            trade_volume: '$60,795,345.28',
-            tvl: '$118,319.89',
-        },
-        {
-            aTokenIcon: DaiIcon,
-            bTokenIcon: EthereumIcon,
-            pool_count: '3pools',
-            pool_total: '$787,867,934.61',
-            from_multi: '1.00x',
-            from_percent: '0.46%',
-            max_apr: '0.46%',
-            trade_fee: '0.16%',
-            borrow: '-0.00%',
-            position: '10',
-            acheive: '1.00X',
-            farm_apr: '0.16%',
-            trade_volume: '$60,795,345.28',
-            tvl: '$118,319.89',
-        },
-        {
-            aTokenIcon: DaiIcon,
-            bTokenIcon: EthereumIcon,
-            pool_count: '3pools',
-            pool_total: '$787,867,934.61',
-            from_multi: '1.00x',
-            from_percent: '0.46%',
-            max_apr: '0.46%',
-            trade_fee: '0.16%',
-            borrow: '-0.00%',
-            position: '10',
-            acheive: '1.00X',
-            farm_apr: '0.16%',
-            trade_volume: '$60,795,345.28',
-            tvl: '$118,319.89',
-        },
-        {
-            aTokenIcon: DaiIcon,
-            bTokenIcon: EthereumIcon,
-            pool_count: '3pools',
-            pool_total: '$787,867,934.61',
-            from_multi: '1.00x',
-            from_percent: '0.46%',
-            max_apr: '0.46%',
-            trade_fee: '0.16%',
-            borrow: '-0.00%',
-            position: '10',
-            acheive: '1.00X',
-            farm_apr: '0.16%',
-            trade_volume: '$60,795,345.28',
-            tvl: '$118,319.89',
+            name: 'ceUSDC',
+            img: USDCIcon,
         },
     ];
+
+    const testPool = React.useMemo(() => {
+        let bump: any = [];
+        for (var i = 0; i < coins.length; i++) {
+            for (var j = i - 1; j >= 0; j--) {
+                let obj: Object = {
+                    aTokenIcon: coins[i].img,
+                    bTokenIcon: coins[j].img,
+                    pool_count: '3pools',
+                    pool_total: '$787,867,934.61',
+                    from_multi: '1.00x',
+                    from_percent: '0.46%',
+                    max_apr: '0.46%',
+                    trade_fee: '0.16%',
+                    borrow: '-0.00%',
+                    position: '10',
+                    acheive: '1.00X',
+                    farm_apr: '0.16%',
+                    trade_volume: '$60,795,345.28',
+                    tvl: '$118,319.89',
+                };
+                bump.push(obj);
+            }
+        }
+        return bump;
+    }, []);
 
     return (
         <Container>
@@ -267,41 +173,24 @@ function Farm() {
                     value={alignment}
                     exclusive
                     onChange={(e: any) => {
-                        setAlignment(e.target.value);
+                        if (e.target.value !== undefined) setAlignment(e.target.value);
+                        else setAlignment(e.target.accessKey);
                     }}
                 >
                     <ToggleButton value="1">All assets</ToggleButton>
-                    <ToggleButton value="2">
-                        <img src={BTCIcon} alt="" />
-                        BTC
-                    </ToggleButton>
-                    <ToggleButton value="3">
-                        <img src={EthereumIcon} alt="" />
-                        Eth
-                    </ToggleButton>
-                    <ToggleButton value="4">
-                        <img src={DaiIcon} alt="" />
-                        DAI
-                    </ToggleButton>
-                    <ToggleButton value="5">
-                        <img src={USDCIcon} alt="" />
-                        USDC
-                    </ToggleButton>
-                    <ToggleButton value="6">
-                        <img src={USDTIcon} alt="" />
-                        USDT
-                    </ToggleButton>
-                    <ToggleButton value="7">
-                        <img src={USDCIcon} alt="" />
-                        ceUSDC
-                    </ToggleButton>
+                    {coins.map((item: any, index: number) => (
+                        <ToggleButton value={String(index + 2)} key={index}>
+                            <img src={item.img} alt="" accessKey={String(index + 2)} />
+                            {item.name}
+                        </ToggleButton>
+                    ))}
                 </ToggleButtonGroup>
             </Box>
 
             {/* Pool Component */}
             <Box>
                 {testPool.map((pool: any, index: number) => (
-                    <PoolCard key={index} poolInfo={pool} />
+                    <PoolCard key={index} poolInfo={pool} param={index + 1} />
                 ))}
             </Box>
         </Container>

@@ -45,11 +45,11 @@ const menuList = [
         param: 'tvl',
         logo: GovernIcon,
     },
-    {
-        title: 'Invest',
-        param: 'invest',
-        logo: Invest,
-    },
+    // {
+    //     title: 'Invest',
+    //     param: 'invest',
+    //     logo: Invest,
+    // },
     {
         title: 'Docs',
         logo: DocsIcon,

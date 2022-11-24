@@ -41,8 +41,8 @@ export default function App() {
                     <Routes>
                         <Route path="/" element={<Navigate to="/home" replace />} />
                         <Route path={'/lend'} element={<Lend />} />
-                        <Route path={'/invest'} element={<Invest />} />
                         <Route path={'/farm'} element={<Farm />} />
+                        <Route path={'/farm/:poolid'} element={<Invest />} />
                         <Route path={'/home'} element={<Home />} />
                         <Route path={'/position'} element={<Position />} />
                         <Route path={'/tvl'} element={<TVL />} />

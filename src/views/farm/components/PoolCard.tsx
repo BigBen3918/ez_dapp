@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { makeStyles } from '@mui/styles';
 import { Typography, Box, Grid } from '@mui/material';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
@@ -28,11 +29,8 @@ const useStyles = makeStyles((theme: any) => ({
                 marginTop: '20px',
                 background: 'linear-gradient(93.57deg, #543DFB 0.71%, #F76CC5 50.59%, #FF4848 97.83%)',
                 borderRadius: '13px',
-                padding: '25px',
+                padding: '10px',
                 textAlign: 'left',
-                [theme.breakpoints.down('sm')]: {
-                    padding: '10px',
-                },
                 '& h5': {
                     fontSize: '24px',
                     fontWeight: '700',
@@ -64,6 +62,7 @@ const useStyles = makeStyles((theme: any) => ({
 function PoolCard(props: any) {
     const classes = useStyles();
     const [dropOpen, setDropOpen] = useState(false);
+    const { param } = props;
     const {
         aTokenIcon,
         bTokenIcon,
@@ -80,6 +79,7 @@ function PoolCard(props: any) {
         trade_volume,
         tvl,
     } = props.poolInfo;
+    const navigate = useNavigate();
 
     return (
         <Box className={classes.root}>
@@ -96,6 +96,7 @@ function PoolCard(props: any) {
                                 '& img': {
                                     width: '35px',
                                     height: '35px',
+                                    borderRadius: '50%',
                                 },
                             }}
                         >
@@ -127,15 +128,19 @@ function PoolCard(props: any) {
                             gap: '15px',
                             userSelect: 'none',
                             cursor: 'pointer',
-                            '&:hover': {
-                                color: 'grey',
-                            },
                         }}
                     >
-                        <Common_FillButton content="Farn upto 1.00x" />
+                        <Common_FillButton content="Farn upto 1.00x" onClick={() => navigate(`/farm/${param}`)} />
                         <Box
                             onClick={() => setDropOpen(!dropOpen)}
-                            sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}
+                            sx={{
+                                display: 'flex',
+                                justifyContent: 'center',
+                                alignItems: 'center',
+                                '&:hover': {
+                                    color: 'grey',
+                                },
+                            }}
                         >
                             <Typography sx={{ opacity: '0.8' }}>Hide details</Typography>
                             {dropOpen ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
@@ -145,43 +150,43 @@ function PoolCard(props: any) {
                 {dropOpen && (
                     <Box className="hidden_content">
                         <Grid container justifyContent={'center'} alignItems={'center'}>
-                            <Grid item xs={12} sm={6} md={4} lg={3} p={1}>
+                            <Grid item xs={12} sm={6} md={4} lg={3}>
                                 <Box sx={{ p: 1.5 }}>
                                     <Typography variant="subtitle1">Maximum APR</Typography>
                                     <Typography variant="h5">{max_apr}</Typography>
                                 </Box>
                             </Grid>
-                            <Grid item xs={12} sm={6} md={4} lg={3} p={1}>
+                            <Grid item xs={12} sm={6} md={4} lg={3}>
                                 <Box sx={{ p: 1.5 }}>
                                     <Typography variant="subtitle1">Trading Fee APY</Typography>
                                     <Typography variant="h5">{trade_fee}</Typography>
                                 </Box>
                             </Grid>
-                            <Grid item xs={12} sm={6} md={4} lg={3} p={1}>
+                            <Grid item xs={12} sm={6} md={4} lg={3}>
                                 <Box sx={{ p: 1.5 }}>
                                     <Typography variant="subtitle1">Borrowing Interest</Typography>
                                     <Typography variant="h5">{borrow}</Typography>
                                 </Box>
                             </Grid>
-                            <Grid item xs={12} sm={6} md={4} lg={3} p={1}>
+                            <Grid item xs={12} sm={6} md={4} lg={3}>
                                 <Box sx={{ p: 1.5 }}>
                                     <Typography variant="subtitle1">Positions</Typography>
                                     <Typography variant="h5">{position}</Typography>
                                 </Box>
                             </Grid>
-                            <Grid item xs={12} sm={6} md={4} lg={3} p={1}>
+                            <Grid item xs={12} sm={6} md={4} lg={3}>
                                 <Box sx={{ p: 1.5 }}>
                                     <Typography variant="subtitle1">Acheived From</Typography>
                                     <Typography variant="h5">{acheive}</Typography>
                                 </Box>
                             </Grid>
-                            <Grid item xs={12} sm={6} md={4} lg={3} p={1}>
+                            <Grid item xs={12} sm={6} md={4} lg={3}>
                                 <Box sx={{ p: 1.5 }}>
                                     <Typography variant="subtitle1">Yield Farming APR</Typography>
                                     <Typography variant="h5">{farm_apr}</Typography>
                                 </Box>
                             </Grid>
-                            <Grid item xs={12} sm={6} md={4} lg={3} p={1}>
+                            <Grid item xs={12} sm={6} md={4} lg={3}>
                                 <Box sx={{ p: 1.5 }}>
                                     <Typography variant="subtitle1">Trading Volume (24h)</Typography>
                                     <Typography variant="h5">{trade_volume}</Typography>

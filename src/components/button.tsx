@@ -21,19 +21,14 @@ const OutlineStyledButton = styled(Button)({
     lineHeight: '23px',
 });
 
-interface Object {
-    content: string;
-    padding?: string;
-}
+export const Common_FillButton = (props: any) => {
+    const { content, ...other } = props;
 
-export const Common_FillButton = (props: Object) => {
-    const { content } = props;
-
-    return <StyledButton>{content}</StyledButton>;
+    return <StyledButton {...other}>{content}</StyledButton>;
 };
 
 export const Common_OutlineButton = (props: any) => {
-    const { content } = props;
+    const { content, ...othe } = props;
 
-    return <OutlineStyledButton>{content}</OutlineStyledButton>;
+    return <OutlineStyledButton {...othe}>{content}</OutlineStyledButton>;
 };
