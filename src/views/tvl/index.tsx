@@ -5,6 +5,12 @@ import Container from '../../components/container';
 import ProtocolModal from './components/protocol_modal';
 import PoolModal from './components/pool_modal';
 
+import EthereumIcon from '../../asset/icons/crypto-ethereum.png';
+import USDCIcon from '../../asset/icons/crypto-usdc.png';
+import USDTIcon from '../../asset/icons/crypto-usdt.png';
+import BTCIcon from '../../asset/icons/crypto-btc.png';
+import DaiIcon from '../../asset/icons/crypto-dai.svg';
+
 const useStyles = makeStyles((theme: any) => ({
     root: {
         color: 'white',
@@ -12,7 +18,6 @@ const useStyles = makeStyles((theme: any) => ({
             fontSize: '56px',
             fontWeight: 700,
             lineHeight: '70px',
-            paddingBottom: '25px',
         },
         '& h6': {
             fontSize: '18px',
@@ -49,17 +54,47 @@ export default function TVL() {
     const classes = useStyles();
 
     const protocolData = ['Uniswap V2 pools TVL', 'Sushiswap pools TVL', 'Curve pools TVL'];
-    const poolData = [
-        '818,768.67',
-        '818,768.67',
-        '818,768.67',
-        '818,768.67',
-        '818,768.67',
-        '818,768.67',
-        '818,768.67',
-        '818,768.67',
-        '818,768.67',
+    const coins = [
+        {
+            name: 'BTC',
+            img: BTCIcon,
+        },
+        {
+            name: 'ETH',
+            img: EthereumIcon,
+        },
+        {
+            name: 'DAI',
+            img: DaiIcon,
+        },
+        {
+            name: 'USDC',
+            img: USDCIcon,
+        },
+        {
+            name: 'USDT',
+            img: USDTIcon,
+        },
+        {
+            name: 'ceUSDC',
+            img: USDCIcon,
+        },
     ];
+
+    const poolData = React.useMemo(() => {
+        let bump: any = [];
+        for (var i = 0; i < coins.length; i++) {
+            for (var j = i - 1; j >= 0; j--) {
+                let obj: Object = {
+                    aTokenIcon: coins[i].img,
+                    bTokenIcon: coins[j].img,
+                    number: '818,768.67',
+                };
+                bump.push(obj);
+            }
+        }
+        return bump;
+    }, []);
 
     return (
         <Container>
@@ -157,7 +192,7 @@ export default function TVL() {
                 <Box className={classes.divide_line} />
                 <Grid container justifyContent="space-between" alignItems={'center'} sx={{ marginTop: '40px' }}>
                     {poolData.map((item: any, index: number) => (
-                        <PoolModal title={item} key={index} />
+                        <PoolModal title={item.number} imga={item.aTokenIcon} imgb={item.bTokenIcon} key={index} />
                     ))}
                 </Grid>
             </Box>

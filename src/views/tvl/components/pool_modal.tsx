@@ -1,11 +1,8 @@
 import React from 'react';
 import { Box, Typography, Grid } from '@mui/material';
 
-import a from '../../../asset/icons/crypto-ethereum.png';
-import b from '../../../asset/icons/crypto-usdc.png';
-
 export default function PoolModal(props: any) {
-    const { title } = props;
+    const { title, imga, imgb } = props;
 
     return (
         <Grid item xs={12} md={6} lg={4} sx={{ p: 2 }}>
@@ -23,9 +20,19 @@ export default function PoolModal(props: any) {
             >
                 <Typography variant="subtitle1">Liquidity Providing</Typography>
                 <Box sx={{ marginBottom: '20px', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                    <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                        <img src={a} alt="" />
-                        <img src={b} alt="" style={{ marginLeft: '-15px' }} />
+                    <Box
+                        sx={{
+                            display: 'flex',
+                            alignItems: 'center',
+                            '& img': {
+                                width: '35px',
+                                height: '35px',
+                                borderRadius: '50%',
+                            },
+                        }}
+                    >
+                        <img src={imga} alt="" />
+                        <img src={imgb} alt="" style={{ marginLeft: '-15px' }} />
                     </Box>
                     <Box
                         sx={{
