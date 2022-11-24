@@ -15,10 +15,18 @@ const useStyles = makeStyles((theme: any) => ({
         alignItems: 'center',
         paddingBottom: '50px',
         color: '#FFF',
+        gap: '20px',
+        [theme.breakpoints.down('md')]: {
+            flexDirection: 'column',
+            justifyContent: 'center',
+        },
         '& h1': {
             fontSize: '56px',
             fontWeight: '700',
             lineHeight: '70px',
+            [theme.breakpoints.down('sm')]: {
+                fontSize: '35px',
+            },
         },
         '& h6': {
             opacity: '.5',
@@ -30,6 +38,9 @@ const useStyles = makeStyles((theme: any) => ({
         alignItems: 'center',
         justifyContent: 'space-between',
         padding: '30px 0',
+        [theme.breakpoints.down('sm')]: {
+            justifyContent: 'center',
+        },
         '& .MuiToggleButtonGroup-root': {
             width: '100%',
             display: 'flex',
@@ -49,6 +60,10 @@ const useStyles = makeStyles((theme: any) => ({
             padding: '18px 33px',
             color: 'white',
             fontSize: '18px',
+            minWidth: '170px',
+            [theme.breakpoints.down('sm')]: {
+                width: '100%',
+            },
         },
     },
 }));
@@ -210,7 +225,18 @@ function Farm() {
                 <Box>
                     <Typography variant="h1">FarmPools</Typography>
                 </Box>
-                <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '100px' }}>
+                <Box
+                    sx={{
+                        display: 'flex',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        gap: { sm: '100px', xs: '10px' },
+                        flexDirection: {
+                            sm: 'row',
+                            xs: 'column',
+                        },
+                    }}
+                >
                     <Box sx={{ textAlign: 'right' }}>
                         <Typography variant="subtitle1">Total Positions</Typography>
                         <Typography variant="h5">234 Positions</Typography>

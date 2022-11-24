@@ -16,21 +16,30 @@ const useStyles = makeStyles((theme: any) => ({
             background: '#342D55',
             '& .content': {
                 display: 'flex',
-                flexDirection: { xs: 'column', md: 'row' },
+                flexDirection: 'row',
                 flexWrap: 'wrap',
                 justifyContent: 'space-around',
                 alignItems: 'center',
+                [theme.breakpoints.down('md')]: {
+                    flexDirection: 'column',
+                },
             },
             '& .hidden_content': {
                 marginTop: '20px',
                 background: 'linear-gradient(93.57deg, #543DFB 0.71%, #F76CC5 50.59%, #FF4848 97.83%)',
                 borderRadius: '13px',
-                padding: '38px',
+                padding: '25px',
                 textAlign: 'left',
+                [theme.breakpoints.down('sm')]: {
+                    padding: '10px',
+                },
                 '& h5': {
                     fontSize: '24px',
                     fontWeight: '700',
                     lineHeight: '30px',
+                    [theme.breakpoints.down('sm')]: {
+                        fontSize: '20px',
+                    },
                 },
                 '& h6': {
                     fontSize: '16px',
@@ -38,6 +47,16 @@ const useStyles = makeStyles((theme: any) => ({
                     opacity: '.6',
                 },
             },
+        },
+    },
+    textContent: {
+        textAlign: 'right',
+        [theme.breakpoints.down('md')]: {
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            padding: '10px 0',
+            width: '100%',
         },
     },
 }));
@@ -66,7 +85,10 @@ function PoolCard(props: any) {
         <Box className={classes.root}>
             <Box>
                 <Box className="content">
-                    <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '20px' }}>
+                    <Box
+                        sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '20px' }}
+                        className={classes.textContent}
+                    >
                         <Box
                             sx={{
                                 display: 'flex',
@@ -80,20 +102,20 @@ function PoolCard(props: any) {
                             <img src={aTokenIcon} />
                             <img src={bTokenIcon} style={{ marginLeft: '-15px' }} />
                         </Box>
-                        <Box sx={{ textAlign: 'left' }}>
+                        <Box sx={{ textAlign: { lg: 'left', md: 'right' } }}>
                             <Typography sx={{ opacity: '.5', wordBreak: 'keep-all' }}>Yield&nbsp;Farming</Typography>
                             <Typography sx={{ fontSize: '18px' }}>{pool_count}</Typography>
                         </Box>
                     </Box>
-                    <Box sx={{ textAlign: 'right' }}>
+                    <Box className={classes.textContent}>
                         <Typography sx={{ opacity: '.5', wordBreak: 'keep-all' }}>From {from_percent} up to</Typography>
                         <Typography sx={{ fontSize: '18px' }}>{from_percent}</Typography>
                     </Box>
-                    <Box sx={{ textAlign: 'right' }}>
+                    <Box className={classes.textContent}>
                         <Typography sx={{ opacity: '.5', wordBreak: 'keep-all' }}>From {from_multi} up to</Typography>
                         <Typography sx={{ fontSize: '18px' }}>{from_multi}</Typography>
                     </Box>
-                    <Box sx={{ textAlign: 'right' }}>
+                    <Box className={classes.textContent}>
                         <Typography sx={{ opacity: '.5', wordBreak: 'keep-all' }}>Pool TVL</Typography>
                         <Typography sx={{ fontSize: '18px' }}>{pool_total}</Typography>
                     </Box>
@@ -123,49 +145,49 @@ function PoolCard(props: any) {
                 {dropOpen && (
                     <Box className="hidden_content">
                         <Grid container justifyContent={'center'} alignItems={'center'}>
-                            <Grid item xs={12} sm={6} md={4} lg={3}>
+                            <Grid item xs={12} sm={6} md={4} lg={3} p={1}>
                                 <Box sx={{ p: 1.5 }}>
                                     <Typography variant="subtitle1">Maximum APR</Typography>
                                     <Typography variant="h5">{max_apr}</Typography>
                                 </Box>
                             </Grid>
-                            <Grid item xs={12} sm={6} md={4} lg={3}>
+                            <Grid item xs={12} sm={6} md={4} lg={3} p={1}>
                                 <Box sx={{ p: 1.5 }}>
                                     <Typography variant="subtitle1">Trading Fee APY</Typography>
                                     <Typography variant="h5">{trade_fee}</Typography>
                                 </Box>
                             </Grid>
-                            <Grid item xs={12} sm={6} md={4} lg={3}>
+                            <Grid item xs={12} sm={6} md={4} lg={3} p={1}>
                                 <Box sx={{ p: 1.5 }}>
                                     <Typography variant="subtitle1">Borrowing Interest</Typography>
                                     <Typography variant="h5">{borrow}</Typography>
                                 </Box>
                             </Grid>
-                            <Grid item xs={12} sm={6} md={4} lg={3}>
+                            <Grid item xs={12} sm={6} md={4} lg={3} p={1}>
                                 <Box sx={{ p: 1.5 }}>
                                     <Typography variant="subtitle1">Positions</Typography>
                                     <Typography variant="h5">{position}</Typography>
                                 </Box>
                             </Grid>
-                            <Grid item xs={12} sm={6} md={4} lg={3}>
+                            <Grid item xs={12} sm={6} md={4} lg={3} p={1}>
                                 <Box sx={{ p: 1.5 }}>
                                     <Typography variant="subtitle1">Acheived From</Typography>
                                     <Typography variant="h5">{acheive}</Typography>
                                 </Box>
                             </Grid>
-                            <Grid item xs={12} sm={6} md={4} lg={3}>
+                            <Grid item xs={12} sm={6} md={4} lg={3} p={1}>
                                 <Box sx={{ p: 1.5 }}>
                                     <Typography variant="subtitle1">Yield Farming APR</Typography>
                                     <Typography variant="h5">{farm_apr}</Typography>
                                 </Box>
                             </Grid>
-                            <Grid item xs={12} sm={6} md={4} lg={3}>
+                            <Grid item xs={12} sm={6} md={4} lg={3} p={1}>
                                 <Box sx={{ p: 1.5 }}>
                                     <Typography variant="subtitle1">Trading Volume (24h)</Typography>
                                     <Typography variant="h5">{trade_volume}</Typography>
                                 </Box>
                             </Grid>
-                            <Grid item xs={12} sm={6} md={4} lg={3}>
+                            <Grid item xs={12} sm={6} md={4} lg={3} p={1}>
                                 <Box sx={{ p: 1.5 }}>
                                     <Typography variant="subtitle1">TVL via Homora v2</Typography>
                                     <Typography variant="h5">{tvl}</Typography>
