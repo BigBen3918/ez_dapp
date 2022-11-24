@@ -40,6 +40,7 @@ const useStyles = makeStyles(() => ({
             padding: '18px 33px',
             color: 'white',
             fontSize: '18px',
+            borderRadius: '50px',
         },
     },
 }));
