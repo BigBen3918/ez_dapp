@@ -27,6 +27,7 @@ const useStyles = makeStyles((theme: any) => ({
         },
     },
     part1: {
+        marginTop: '30px',
         display: 'flex',
         alignItems: 'center',
         [theme.breakpoints.down('md')]: {
@@ -104,7 +105,10 @@ const useStyles = makeStyles((theme: any) => ({
             display: 'flex',
             justifyContent: 'flex-end',
             '& > img': {
-                width: '100%',
+                width: '80%',
+                [theme.breakpoints.down('md')]: {
+                    width: '100%',
+                },
                 marginTop: '-40px',
             },
         },
