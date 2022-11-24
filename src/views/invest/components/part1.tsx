@@ -122,11 +122,11 @@ export default function Part1(props: any) {
                 <Stack direction={'row'} alignItems={'center'} gap={2}>
                     <StyledSwitch />
                     <Stack direction={'row'} alignItems={'center'} gap={1}>
-                        <img src={a} alt="" style={{ width: '25px', height: '25px' }} />
-                        <Typography sx={{ fontWeight: 400, fontSize: '18px' }}>Aptos</Typography>
+                        <img src={imga} alt="" style={{ width: '25px', height: '25px', borderRadius: '50%' }} />
+                        <Typography sx={{ fontWeight: 400, fontSize: '18px' }}>{namea}</Typography>
                     </Stack>
                 </Stack>
-                <Typography variant="subtitle1">Balance: 0.00 Aptos</Typography>
+                <Typography variant="subtitle1">Balance: 0.00 {namea}</Typography>
             </Box>
             <Box
                 sx={{
@@ -139,11 +139,11 @@ export default function Part1(props: any) {
                 <Stack direction={'row'} alignItems={'center'} gap={2}>
                     <StyledSwitch />
                     <Stack direction={'row'} alignItems={'center'} gap={1}>
-                        <img src={b} alt="" style={{ width: '25px', height: '25px' }} />
-                        <Typography sx={{ fontWeight: 400, fontSize: '18px' }}>USDC</Typography>
+                        <img src={imgb} alt="" style={{ width: '25px', height: '25px', borderRadius: '50%' }} />
+                        <Typography sx={{ fontWeight: 400, fontSize: '18px' }}>{nameb}</Typography>
                     </Stack>
                 </Stack>
-                <Typography variant="subtitle1">Balance: 0.00 USDC</Typography>
+                <Typography variant="subtitle1">Balance: 0.00 {nameb}</Typography>
             </Box>
             <Box
                 sx={{
@@ -172,23 +172,6 @@ export default function Part1(props: any) {
                 <ToggleButton value="3">75%</ToggleButton>
                 <ToggleButton value="4">100%</ToggleButton>
             </ToggleButtonGroup>
-            <Box
-                sx={{
-                    display: 'flex',
-                    justifyContent: 'space-between',
-                    alignItems: 'center',
-                    '@media(max-width: 450px)': { flexDirection: 'column' },
-                }}
-            >
-                <Stack direction={'row'} alignItems={'center'} gap={2}>
-                    <StyledSwitch />
-                    <Stack direction={'row'} alignItems={'center'} gap={1}>
-                        <img src={b} alt="" style={{ width: '25px', height: '25px' }} />
-                        <Typography sx={{ fontWeight: 400, fontSize: '18px' }}>SLP</Typography>
-                    </Stack>
-                </Stack>
-                <Typography variant="subtitle1">Balance: 0.00 SLP</Typography>
-            </Box>
         </Box>
     );
 }
