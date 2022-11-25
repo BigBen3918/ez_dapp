@@ -152,15 +152,15 @@ export default function Position() {
                     <Box>
                         <Box className="header">
                             <Box>
-                                <Typography variant="subtitle1">Claimable ALPHA Rewards</Typography>
-                                <Typography variant="h4">0.00 ALPHA</Typography>
+                                <Typography variant="subtitle1">Claimable $EZM Rewards</Typography>
+                                <Typography variant="h4">0.00 $EZM</Typography>
                             </Box>
                             <Common_FillButton content="Claim & Stake" />
                         </Box>
                         <Box className="devideLine" />
                         <Box className="footer">
-                            <Typography variant="subtitle1">Pending ALPHA Rewards</Typography>
-                            <Typography variant="body1">~0.00 ALPHA</Typography>
+                            <Typography variant="subtitle1">Pending $EZM Rewards</Typography>
+                            <Typography variant="body1">~0.00 $EZM</Typography>
                         </Box>
                         <Box className={classes.gradient__back}></Box>
                     </Box>

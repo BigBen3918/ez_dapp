@@ -130,7 +130,7 @@ function PoolCard(props: any) {
                             cursor: 'pointer',
                         }}
                     >
-                        <Common_FillButton content="Farn upto 1.00x" onClick={() => navigate(`/farm/${param}`)} />
+                        <Common_FillButton content="Farm upto 1.00x" onClick={() => navigate(`/farm/${param}`)} />
                         <Box
                             onClick={() => setDropOpen(!dropOpen)}
                             sx={{

@@ -139,6 +139,10 @@ export default function Part3(props: any) {
                         p: 3,
                         border: '1px solid rgba(255,255,255,.3)',
                         borderRadius: '13px',
+                        minWidth: '300px',
+                        '@media(max-width: 430px)': {
+                            minWidth: '100%',
+                        },
                     },
                 }}
             >

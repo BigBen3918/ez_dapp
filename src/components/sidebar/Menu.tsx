@@ -4,11 +4,11 @@ import { makeStyles } from '@mui/styles';
 import { NavLink, useLocation } from 'react-router-dom';
 import { Link } from '@mui/material';
 
-import SwapIcon from '../../asset/icons/swap.svg';
-import FarmIcon from '../../asset/icons/farm.svg';
+import SwapIcon from '../../asset/icons/swap.png';
+import FarmIcon from '../../asset/icons/farm.png';
 import DocsIcon from '../../asset/icons/docs.svg';
-import LendIcon from '../../asset/icons/dashboard.svg';
-import GovernIcon from '../../asset/icons/govern.svg';
+import LendIcon from '../../asset/icons/dashboard.png';
+import GovernIcon from '../../asset/icons/govern.png';
 import { Typography } from '@mui/material';
 
 const useStyles = makeStyles((theme: any) => ({
