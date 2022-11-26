@@ -1,9 +1,13 @@
 import React from 'react';
 import { useMediaQuery } from '@mui/material';
 import { makeStyles } from '@mui/styles';
-import { Avatar, Box } from '@mui/material';
+import { Avatar, Box, Select, MenuItem, Stack } from '@mui/material';
 import { IconMenu2 } from '@tabler/icons';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ConnectButton from './ConnectWallet';
+
+import aptosIcon from '../../asset/icons/Aptos.png';
+import suiIcon from '../../asset/icons/sui.png';
 
 interface IHeader {
     handleDrawerToggle?: () => void;
@@ -32,11 +36,34 @@ const useStyles = makeStyles((theme) => ({
     toggleButton: {
         marginLeft: '15px',
     },
+    selectbutton: {
+        '& .MuiInputBase-root': {
+            color: 'white',
+            border: 'none',
+            borderRadius: '100px',
+            padding: '0 20px',
+            justifyContent: 'center',
+            background: 'linear-gradient(93.57deg, #543DFB 0.71%, #F76CC5 50.59%, #FF4848 97.83%)',
+        },
+        '& .MuiOutlinedInput-input': {
+            padding: '10px',
+        },
+        '& .MuiOutlinedInput-notchedOutline': {
+            border: 'none',
+        },
+        '& .MuiSvgIcon-root': {
+            color: 'white',
+        },
+        '& ul': {
+            background: 'red!important',
+        },
+    },
 })) as any;
 
 function Header({ handleDrawerToggle }: IHeader) {
     const is1200 = useMediaQuery('(max-width: 1200px)');
     const classes = useStyles();
+    const [selectValue, setSelectValue] = React.useState('aptos');
 
     return (
         <div className={classes.topBar}>
@@ -55,12 +82,43 @@ function Header({ handleDrawerToggle }: IHeader) {
             )}
             <Box
                 sx={{
+                    justifyContent: 'flex-end',
                     display: 'flex',
                     flexGrow: 1,
-                    justifyContent: 'flex-end',
                     alignContent: 'center',
+                    gap: '50px',
                 }}
             >
+                <Box className={classes.selectbutton}>
+                    <Select
+                        value={selectValue}
+                        onChange={(e: any) => setSelectValue(e.target.value)}
+                        IconComponent={ExpandMoreIcon}
+                    >
+                        <MenuItem value={'aptos'}>
+                            <Stack
+                                direction={'row'}
+                                alignItems={'center'}
+                                gap={1}
+                                sx={{ '& img': { width: '30px', height: '30px', borderRadius: '50%' } }}
+                            >
+                                <img src={aptosIcon} alt="" />
+                                Aptos
+                            </Stack>
+                        </MenuItem>
+                        <MenuItem value={'sui'}>
+                            <Stack
+                                direction={'row'}
+                                alignItems={'center'}
+                                gap={1}
+                                sx={{ '& img': { width: '30px', height: '30px', borderRadius: '50%' } }}
+                            >
+                                <img src={suiIcon} alt="" />
+                                Sui
+                            </Stack>
+                        </MenuItem>
+                    </Select>
+                </Box>
                 <ConnectButton />
             </Box>
         </div>
