@@ -85,7 +85,7 @@ function Header({ handleDrawerToggle }: IHeader) {
                     justifyContent: 'flex-end',
                     display: 'flex',
                     flexGrow: 1,
-                    alignContent: 'center',
+                    alignItems: 'center',
                     gap: '50px',
                 }}
             >
