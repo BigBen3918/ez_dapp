@@ -2,7 +2,7 @@ import React from 'react';
 import { Box, Typography, Grid } from '@mui/material';
 
 export default function PoolModal(props: any) {
-    const { title, imga, imgb } = props;
+    const { title, number, imga, namea, imgb, nameb, position } = props;
 
     return (
         <Grid item xs={12} md={6} lg={4} sx={{ p: 2 }}>
@@ -18,7 +18,7 @@ export default function PoolModal(props: any) {
                     },
                 }}
             >
-                <Typography variant="subtitle1">Liquidity Providing</Typography>
+                <Typography variant="subtitle1">{title}</Typography>
                 <Box sx={{ marginBottom: '20px', display: 'flex', alignItems: 'center', gap: '10px' }}>
                     <Box
                         sx={{
@@ -42,16 +42,18 @@ export default function PoolModal(props: any) {
                             },
                         }}
                     >
-                        <Typography variant="h5">UNI/ETH</Typography>
-                        <Typography variant="h5">LiquidSwap</Typography>
+                        <Typography variant="h5">
+                            {namea}/{nameb}
+                        </Typography>
+                        <Typography variant="h5">{title.replace('TVL', '').replace('pools', '')}</Typography>
                     </Box>
                 </Box>
                 <Typography variant="subtitle1">TVL</Typography>
                 <Typography variant="h5" sx={{ marginBottom: '20px' }}>
-                    ${title}
+                    ${number}
                 </Typography>
                 <Typography variant="subtitle1">Positions</Typography>
-                <Typography variant="h5">114</Typography>
+                <Typography variant="h5">{position}</Typography>
             </Box>
         </Grid>
     );

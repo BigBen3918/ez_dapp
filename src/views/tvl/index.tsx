@@ -85,12 +85,18 @@ export default function TVL() {
         let bump: any = [];
         for (var i = 0; i < coins.length; i++) {
             for (var j = i - 1; j >= 0; j--) {
-                let obj: Object = {
-                    aTokenIcon: coins[i].img,
-                    bTokenIcon: coins[j].img,
-                    number: '818,768.67',
-                };
-                bump.push(obj);
+                protocolData.map((item: string) => {
+                    let obj: Object = {
+                        title: item,
+                        aTokenIcon: coins[i].img,
+                        aname: coins[i].name,
+                        bTokenIcon: coins[j].img,
+                        bname: coins[j].name,
+                        number: '0.00',
+                        position: Math.floor(Math.random() * 100) + 20,
+                    };
+                    bump.push(obj);
+                });
             }
         }
         return bump;
@@ -192,7 +198,16 @@ export default function TVL() {
                 <Box className={classes.divide_line} />
                 <Grid container justifyContent="space-between" alignItems={'center'} sx={{ marginTop: '40px' }}>
                     {poolData.map((item: any, index: number) => (
-                        <PoolModal title={item.number} imga={item.aTokenIcon} imgb={item.bTokenIcon} key={index} />
+                        <PoolModal
+                            title={item.title}
+                            number={item.number}
+                            imga={item.aTokenIcon}
+                            namea={item.aname}
+                            imgb={item.bTokenIcon}
+                            nameb={item.bname}
+                            position={item.position}
+                            key={index}
+                        />
                     ))}
                 </Grid>
             </Box>
