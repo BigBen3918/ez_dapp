@@ -38,16 +38,6 @@ const useStyles = makeStyles((theme: any) => ({
         height: '1px',
         opacity: '.5',
     },
-    gradient__back: {
-        position: 'absolute',
-        top: '5px',
-        left: '0',
-        width: '100%',
-        height: '100%',
-        background: 'linear-gradient(104.45deg, #6452DE 0%, #F76CC5 73.89%, #FF6F6F 112.74%)',
-        zIndex: '-1',
-        borderRadius: '10px',
-    },
 }));
 
 export default function TVL() {

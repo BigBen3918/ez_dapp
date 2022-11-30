@@ -87,7 +87,7 @@ function Header({ handleDrawerToggle }: IHeader) {
                     display: 'flex',
                     flexGrow: 1,
                     alignItems: 'center',
-                    gap: '50px',
+                    gap: '20px',
                 }}
             >
                 <Box className={classes.selectbutton}>
