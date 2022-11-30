@@ -66,8 +66,8 @@ export default function Invest() {
     const classes = useStyles();
 
     const coins = {
-        0: { img: BTCIcon, name: 'BTC' },
-        1: { img: EthereumIcon, name: 'ETH' },
+        0: { img: BTCIcon, name: 'WBTC' },
+        1: { img: EthereumIcon, name: 'WETH' },
         2: { img: DaiIcon, name: 'DAI' },
         3: { img: USDCIcon, name: 'USDC' },
         4: { img: USDTIcon, name: 'USDT' },
@@ -96,7 +96,7 @@ export default function Invest() {
                                 {coins[Number(strArr[0])].name}/{coins[Number(strArr[1])].name}
                             </Typography>
                         </Stack>
-                        <Typography variant="subtitle1">Yield farming on Sushiswap</Typography>
+                        <Typography variant="subtitle1">Yield farming on LiquidSwap</Typography>
                     </Stack>
                     <Stack
                         direction={'row'}

@@ -51,22 +51,15 @@ function ConnectButton() {
                     display: 'flex',
                     alignContent: 'center',
                     justifyContent: 'center',
-                    backgroundImage: 'linear-gradient(93.57deg, #543DFB 0.71%, #F76CC5 50.59%, #FF4848 97.83%)',
-                    borderRadius: '13px',
-                    padding: '3px 5px 5px',
-                    marginRight: '20px',
                 }}
             >
-                <Typography sx={{ color: '#FFF', lineHeight: '36px', px: '5px' }}>Aptos</Typography>
                 <Button
                     sx={{
-                        borderRadius: '10000px',
-                        textTransform: 'none',
-                        bgcolor: '#342D55',
-                        color: '#FFF',
-                        '&:hover': {
-                            bgcolor: '#342D55',
-                        },
+                        color: 'white',
+                        padding: '12px 20px',
+                        backgroundImage: 'linear-gradient(93.57deg, #543DFB 0.71%, #F76CC5 50.59%, #FF4848 97.83%)',
+                        borderRadius: '100px',
+                        marginRight: '20px',
                     }}
                     onClick={() => setOpen(!open)}
                 >

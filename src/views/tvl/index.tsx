@@ -56,11 +56,11 @@ export default function TVL() {
     const protocolData = ['LiquidSwap pools TVL', 'Pancakeswap TVL', 'AUX Exchange TVL'];
     const coins = [
         {
-            name: 'BTC',
+            name: 'WBTC',
             img: BTCIcon,
         },
         {
-            name: 'ETH',
+            name: 'WETH',
             img: EthereumIcon,
         },
         {

@@ -14,7 +14,8 @@ const Back = styled(Box)({
 });
 
 export default function ProtocolModal(props: any) {
-    const { title } = props;
+
+    const { title } = props
 
     return (
         <Box
@@ -36,8 +37,6 @@ export default function ProtocolModal(props: any) {
             <Typography variant="h5" sx={{ marginBottom: '20px' }}>
                 $818,768.67
             </Typography>
-            <Typography variant="subtitle1">Uniswap V2 positions</Typography>
-            <Typography variant="h5">114</Typography>
             <Back />
         </Box>
     );

@@ -38,6 +38,7 @@ const useStyles = makeStyles((theme) => ({
     },
     selectbutton: {
         '& .MuiInputBase-root': {
+            minWidth: '170px',
             color: 'white',
             border: 'none',
             borderRadius: '100px',

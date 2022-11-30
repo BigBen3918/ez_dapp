@@ -58,7 +58,7 @@ a {
 }
 
 .MuiPopover-paper {
-    background-color: rgb(63, 63, 63) !important;
+    background-color: #342d55 !important;
     color: white !important;
     min-width: 155px !important;
     top: 75px !important;

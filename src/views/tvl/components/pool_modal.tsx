@@ -43,7 +43,7 @@ export default function PoolModal(props: any) {
                         }}
                     >
                         <Typography variant="h5">UNI/ETH</Typography>
-                        <Typography variant="h5">Uniswap V2</Typography>
+                        <Typography variant="h5">LiquidSwap</Typography>
                     </Box>
                 </Box>
                 <Typography variant="subtitle1">TVL</Typography>
