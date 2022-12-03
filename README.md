@@ -1,2 +1,2 @@
-# Homora Dapp
+# EZ Dapp
 

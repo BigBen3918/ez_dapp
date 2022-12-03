@@ -115,7 +115,7 @@ export default function Invest() {
                             <Typography variant="h5">9</Typography>
                         </Box>
                         <Box>
-                            <Typography variant="subtitle1">TVL via Homora V2</Typography>
+                            <Typography variant="subtitle1">TVL via EZ</Typography>
                             <Typography variant="h5">$5,435.43</Typography>
                         </Box>
                         <Box>
