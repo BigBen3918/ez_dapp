@@ -10,6 +10,7 @@ import DocsIcon from '../../asset/icons/docs.svg';
 import LendIcon from '../../asset/icons/dashboard.png';
 import GovernIcon from '../../asset/icons/govern.png';
 import { Typography } from '@mui/material';
+import Logo from '../../asset/icons/Logo.png'
 
 const useStyles = makeStyles((theme: any) => ({
     menuList: {
@@ -86,9 +87,12 @@ function MenuList() {
 
     return (
         <div className={classes.menuList}>
-            <Typography textAlign="center" sx={{ fontSize: '36px !important', fontWeight: 'bold' }}>
-                EZ Finance
-            </Typography>
+            <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                <img src={Logo} alt='logo' style={{ width: '40px', height: '40px' }} />
+                <Typography textAlign="center" sx={{ fontSize: '36px !important', fontWeight: 'bold', mb: 0.5, ml: 1 }}>
+                    ez finance
+                </Typography>
+            </Box>
             <Box sx={{ mt: 8 }}>
                 {menuList?.map((item, index) =>
                     item.external ? (
