@@ -14,8 +14,7 @@ const Back = styled(Box)({
 });
 
 export default function ProtocolModal(props: any) {
-
-    const { title } = props
+    const { title } = props;
 
     return (
         <Box
@@ -35,7 +34,7 @@ export default function ProtocolModal(props: any) {
         >
             <Typography variant="subtitle1">{title}</Typography>
             <Typography variant="h5" sx={{ marginBottom: '20px' }}>
-                $818,768.67
+                ${Number((Math.random() * 100000 + 800000).toFixed(2)).toLocaleString()}
             </Typography>
             <Back />
         </Box>
