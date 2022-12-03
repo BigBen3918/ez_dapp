@@ -570,8 +570,12 @@ function Home() {
                                         <Typography variant="h5">
                                             {item.aname}-{item.bname}
                                         </Typography>
-                                        <Typography variant="subtitle1">From 18.56% to</Typography>
-                                        <Typography variant="h3">32.45% APR</Typography>
+                                        <Typography variant="subtitle1">
+                                            From {(Math.random() * 15 + 10).toFixed(2)}% to
+                                        </Typography>
+                                        <Typography variant="h3">
+                                            {(Math.random() * 15 + 26).toFixed(2)}% APR
+                                        </Typography>
                                     </Box>
                                 </Box>
                             ))}
@@ -592,7 +596,7 @@ function Home() {
                                     </Box>
                                     <Box>
                                         <Typography variant="subtitle1">APY</Typography>
-                                        <Typography variant="h5">22.24%</Typography>
+                                        <Typography variant="h5">{(Math.random() * 20 + 20).toFixed(2)}%</Typography>
                                     </Box>
                                     <IconButton>
                                         <EastIcon />

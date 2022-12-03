@@ -103,18 +103,20 @@ function PoolCard(props: any) {
                             <img src={aTokenIcon} />
                             <img src={bTokenIcon} style={{ marginLeft: '-15px' }} />
                         </Box>
-                        <Box sx={{ textAlign: { lg: 'left', md: 'right' } }}>
-                            <Typography sx={{ opacity: '.5', wordBreak: 'keep-all' }}>Yield&nbsp;Farming</Typography>
-                            <Typography sx={{ fontSize: '18px' }}>{pool_count}</Typography>
-                        </Box>
                     </Box>
                     <Box className={classes.textContent}>
-                        <Typography sx={{ opacity: '.5', wordBreak: 'keep-all' }}>From {from_percent} up to</Typography>
-                        <Typography sx={{ fontSize: '18px' }}>{from_percent}</Typography>
+                        <Typography sx={{ opacity: '.5', wordBreak: 'keep-all' }}>
+                            From {from_percent}% up to
+                        </Typography>
+                        <Typography sx={{ fontSize: '18px' }}>
+                            {(Number(from_percent) + Number(Math.random() * 0.5 + 0.5)).toFixed(2)}%
+                        </Typography>
                     </Box>
                     <Box className={classes.textContent}>
-                        <Typography sx={{ opacity: '.5', wordBreak: 'keep-all' }}>From {from_multi} up to</Typography>
-                        <Typography sx={{ fontSize: '18px' }}>{from_multi}</Typography>
+                        <Typography sx={{ opacity: '.5', wordBreak: 'keep-all' }}>From {from_multi}x up to</Typography>
+                        <Typography sx={{ fontSize: '18px' }}>
+                            {(Number(from_multi) + Number(Math.random() * 0.5 + 1)).toFixed(2)}x
+                        </Typography>
                     </Box>
                     <Box className={classes.textContent}>
                         <Typography sx={{ opacity: '.5', wordBreak: 'keep-all' }}>Pool TVL</Typography>
@@ -130,7 +132,10 @@ function PoolCard(props: any) {
                             cursor: 'pointer',
                         }}
                     >
-                        <Common_FillButton content="Farm upto 1.00x" onClick={() => navigate(`/farm/${param}`)} />
+                        <Common_FillButton
+                            content={'Farm upto ' + (Math.random() * 1 + 1).toFixed(2) + 'x'}
+                            onClick={() => navigate(`/farm/${param}`)}
+                        />
                         <Box
                             onClick={() => setDropOpen(!dropOpen)}
                             sx={{
@@ -153,19 +158,19 @@ function PoolCard(props: any) {
                             <Grid item xs={12} sm={6} md={4} lg={3}>
                                 <Box sx={{ p: 1.5 }}>
                                     <Typography variant="subtitle1">Maximum APR</Typography>
-                                    <Typography variant="h5">{max_apr}</Typography>
+                                    <Typography variant="h5">{max_apr}%</Typography>
                                 </Box>
                             </Grid>
                             <Grid item xs={12} sm={6} md={4} lg={3}>
                                 <Box sx={{ p: 1.5 }}>
                                     <Typography variant="subtitle1">Trading Fee APY</Typography>
-                                    <Typography variant="h5">{trade_fee}</Typography>
+                                    <Typography variant="h5">{trade_fee}%</Typography>
                                 </Box>
                             </Grid>
                             <Grid item xs={12} sm={6} md={4} lg={3}>
                                 <Box sx={{ p: 1.5 }}>
                                     <Typography variant="subtitle1">Borrowing Interest</Typography>
-                                    <Typography variant="h5">{borrow}</Typography>
+                                    <Typography variant="h5">{borrow}%</Typography>
                                 </Box>
                             </Grid>
                             <Grid item xs={12} sm={6} md={4} lg={3}>
@@ -177,25 +182,25 @@ function PoolCard(props: any) {
                             <Grid item xs={12} sm={6} md={4} lg={3}>
                                 <Box sx={{ p: 1.5 }}>
                                     <Typography variant="subtitle1">Acheived From</Typography>
-                                    <Typography variant="h5">{acheive}</Typography>
+                                    <Typography variant="h5">{acheive}X</Typography>
                                 </Box>
                             </Grid>
                             <Grid item xs={12} sm={6} md={4} lg={3}>
                                 <Box sx={{ p: 1.5 }}>
                                     <Typography variant="subtitle1">Yield Farming APR</Typography>
-                                    <Typography variant="h5">{farm_apr}</Typography>
+                                    <Typography variant="h5">{farm_apr}%</Typography>
                                 </Box>
                             </Grid>
                             <Grid item xs={12} sm={6} md={4} lg={3}>
                                 <Box sx={{ p: 1.5 }}>
                                     <Typography variant="subtitle1">Trading Volume (24h)</Typography>
-                                    <Typography variant="h5">{trade_volume}</Typography>
+                                    <Typography variant="h5">${trade_volume}</Typography>
                                 </Box>
                             </Grid>
                             <Grid item xs={12} sm={6} md={4} lg={3} p={1}>
                                 <Box sx={{ p: 1.5 }}>
-                                    <Typography variant="subtitle1">TVL via Homora v2</Typography>
-                                    <Typography variant="h5">{tvl}</Typography>
+                                    <Typography variant="subtitle1">TVL via EZ</Typography>
+                                    <Typography variant="h5">${tvl}</Typography>
                                 </Box>
                             </Grid>
                         </Grid>
