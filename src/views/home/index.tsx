@@ -565,7 +565,10 @@ function Home() {
                                                     }}
                                                 />
                                             </Stack>
-                                            <Common_FillButton content="1.8x" padding="10px 20px" />
+                                            <Common_FillButton
+                                                content={(Math.random() * 1 + 1).toFixed(2) + 'x'}
+                                                padding="10px 20px"
+                                            />
                                         </Stack>
                                         <Typography variant="h5">
                                             {item.aname}-{item.bname}
