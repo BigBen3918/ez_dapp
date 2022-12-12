@@ -34,7 +34,7 @@ export default function ProtocolModal(props: any) {
         >
             <Typography variant="subtitle1">{title}</Typography>
             <Typography variant="h5" sx={{ marginBottom: '20px' }}>
-                ${Number((Math.random() * 100000 + 800000).toFixed(2)).toLocaleString()}
+                $0
             </Typography>
             <Back />
         </Box>

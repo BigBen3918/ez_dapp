@@ -16,6 +16,12 @@ declare global {
     }
 }
 
+declare global {
+    interface Window {
+        pontem: any;
+    }
+}
+
 declare module '@mui/styles/defaultTheme' {
     interface DefaultTheme extends Theme {}
 }

@@ -15,9 +15,9 @@ const useStyles = makeStyles((theme: any) => ({
     root: {
         color: 'white',
         '& > h2': {
-            fontSize: '56px',
+            fontSize: '30px',
             fontWeight: 700,
-            lineHeight: '70px',
+            lineHeight: '40px',
         },
         '& h6': {
             fontSize: '18px',
@@ -111,7 +111,7 @@ export default function TVL() {
                         },
                     }}
                 >
-                    <Typography sx={{ fontSize: '32px', fontWeight: 600 }}>Protocol TVL</Typography>
+                    <Typography sx={{ fontSize: '24px', fontWeight: 600 }}>Protocol TVL</Typography>
                     <Box
                         sx={{
                             display: 'flex',
@@ -126,7 +126,7 @@ export default function TVL() {
                     >
                         <Box sx={{ textAlign: 'right' }}>
                             <Typography variant="subtitle1">Protocol pools TVL</Typography>
-                            <Typography variant="h5">$4,558,529.50</Typography>
+                            <Typography variant="h5">$0</Typography>
                         </Box>
                         <Box sx={{ textAlign: 'right' }}>
                             <Typography variant="subtitle1">Protocol positions</Typography>
@@ -157,7 +157,7 @@ export default function TVL() {
                 >
                     <Typography
                         sx={{
-                            fontSize: '32px',
+                            fontSize: '24px',
                             fontWeight: 600,
                         }}
                     >
@@ -177,7 +177,7 @@ export default function TVL() {
                     >
                         <Box sx={{ textAlign: 'right' }}>
                             <Typography variant="subtitle1">Protocol pools TVL</Typography>
-                            <Typography variant="h5">$4,558,529.50</Typography>
+                            <Typography variant="h5">$0</Typography>
                         </Box>
                         <Box sx={{ textAlign: 'right' }}>
                             <Typography variant="subtitle1">Protocol positions</Typography>

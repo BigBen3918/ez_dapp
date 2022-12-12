@@ -15,7 +15,7 @@ import MenuList from './Menu';
 // style constant
 const useStyles = makeStyles((theme) => ({
     drawerPaper: {
-        width: '280px',
+        width: '240px',
         color: theme.palette.text.primary,
     },
     scrollHeight: {

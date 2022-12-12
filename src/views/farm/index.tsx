@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme: any) => ({
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center',
-        paddingBottom: '50px',
+        paddingBottom: '20px',
         color: '#FFF',
         gap: '20px',
         [theme.breakpoints.down('md')]: {
@@ -24,9 +24,9 @@ const useStyles = makeStyles((theme: any) => ({
             justifyContent: 'center',
         },
         '& h1': {
-            fontSize: '56px',
+            fontSize: '30px',
             fontWeight: '700',
-            lineHeight: '70px',
+            lineHeight: '40px',
             [theme.breakpoints.down('sm')]: {
                 fontSize: '35px',
             },
@@ -164,7 +164,7 @@ function Farm() {
                     </Box>
                     <Box sx={{ textAlign: 'right' }}>
                         <Typography variant="subtitle1">Total Value Locked</Typography>
-                        <Typography variant="h5">$30,010,644.92</Typography>
+                        <Typography variant="h5">$0</Typography>
                     </Box>
                 </Box>
             </Box>

@@ -62,9 +62,9 @@ const useStyles = makeStyles((theme: any) => ({
             },
             '& > h1': {
                 fontStyle: 'normal',
-                fontSize: '46px',
+                fontSize: '30px',
                 fontWeight: '700',
-                lineHeight: '69px',
+                lineHeight: '40px',
                 letterSpacing: '-0.005em',
                 padding: '10px 0',
                 [theme.breakpoints.down('md')]: {
@@ -88,7 +88,7 @@ const useStyles = makeStyles((theme: any) => ({
                     borderRadius: '10px',
                     backgroundColor: 'unset',
                     boxShadow: 'unset',
-                    padding: '20px 30px',
+                    padding: '10px 20px',
                     border: '1px solid white',
                     width: '100%',
                     flex: '1',
@@ -147,7 +147,7 @@ const useStyles = makeStyles((theme: any) => ({
                 zIndex: 0,
             },
             '& h3': {
-                fontSize: '40px',
+                fontSize: '30px',
                 fontWeight: '700',
                 lineHeight: '80px',
                 letter: '-3%',
@@ -172,10 +172,10 @@ const useStyles = makeStyles((theme: any) => ({
             fontSize: '18px',
             fontWeight: 'normal',
             opacity: '.5',
-            marginBottom: '50px',
+            marginBottom: '30px',
         },
         '& > div': {
-            padding: '40px 50px',
+            padding: '20px 10px',
             background: '#342D55',
             display: 'flex',
             justifyContent: 'space-around',
@@ -191,23 +191,24 @@ const useStyles = makeStyles((theme: any) => ({
                 flexDirection: 'column',
                 justifyContent: 'center',
                 alignItems: 'center',
-                padding: '20px',
+                padding: '10px',
                 flex: '1 1 33.3%',
                 [theme.breakpoints.down('md')]: {
                     flex: '1',
                 },
                 '& > h5': {
-                    padding: '30px 0',
+                    color: '#ccc',
+                    padding: '10px 0',
                 },
                 '& img': {
-                    width: '140px',
+                    width: '80px',
                 },
             },
         },
     },
     part4: {
         width: '100%',
-        marginTop: '80px',
+        marginTop: '20px',
         '& .title': {
             display: 'flex',
             justifyContent: 'space-between',
@@ -219,6 +220,7 @@ const useStyles = makeStyles((theme: any) => ({
                 flexDirection: 'column',
             },
             '& h3': {
+                fontSize: '30px',
                 padding: '20px 0',
                 [theme.breakpoints.down('md')]: {
                     padding: '10px 0',
@@ -245,19 +247,20 @@ const useStyles = makeStyles((theme: any) => ({
                 borderBottom: '1px solid grey',
             },
             '& h3': {
-                fontSize: '35px',
+                fontSize: '20px',
             },
         },
     },
     part5: {
         width: '100%',
-        marginTop: '80px',
+        marginTop: '30px',
         textAlign: 'center',
         '& > h3': {
+            fontSize: '30px',
             padding: '20px 0',
             [theme.breakpoints.down('md')]: {
                 padding: '10px 0',
-                fontSize: '35px',
+                fontSize: '28px',
             },
         },
         '& > h6': {
@@ -272,10 +275,13 @@ const useStyles = makeStyles((theme: any) => ({
             alignItems: 'center',
             justifyContent: 'space-around',
             padding: '20px 30px',
+            '& h5': {
+                fontSize: '20px'
+            },
             [theme.breakpoints.down('sm')]: {
                 padding: '10px',
                 '& h5': {
-                    fontSize: '20px',
+                    fontSize: '18px',
                 },
             },
             '& img': {
@@ -292,7 +298,7 @@ const useStyles = makeStyles((theme: any) => ({
         marginTop: '80px',
         background: '#342D55',
         width: '100%',
-        padding: '50px',
+        padding: '20px',
         display: 'flex',
         alignItems: 'center',
         borderRadius: '10px',
@@ -304,10 +310,9 @@ const useStyles = makeStyles((theme: any) => ({
         '& div': {
             flex: '1 1 50%',
             '& h3': {
-                fontSize: '40px',
-                fontWeight: '600',
-                lineHeight: '50px',
-                padding: '20px 0',
+                fontSize: '24px',
+                fontWeight: '500',
+                lineHeight: '40px',
             },
             '& h6': {
                 fontSize: '18px',
@@ -316,7 +321,7 @@ const useStyles = makeStyles((theme: any) => ({
                 paddingBottom: '20px',
             },
             '& img': {
-                width: '300px',
+                width: '200px',
                 [theme.breakpoints.down('lg')]: {
                     width: '250px',
                 },
@@ -438,13 +443,12 @@ function Home() {
                     <Box>
                         <Typography variant="h1">The home of Yield Boosting</Typography>
                         <Typography variant="h3">
-                            Nec consequat ut ullamcorper dis. Nullam integer hendrerit risus non dolor. Nibh interdum
-                            placerat eu sit at morbi fusce.
+                            Your lending & leveraged yield farming protocol on Aptos and Sui
                         </Typography>
                         <Box>
                             <Paper>
                                 <Typography variant="subtitle1">Aptos TVL</Typography>
-                                <Typography variant="h2">$818,768.67</Typography>
+                                <Typography variant="h2">$0</Typography>
                             </Paper>
                             <Paper>
                                 <Typography variant="subtitle1">Sui TVL</Typography>
@@ -505,7 +509,7 @@ function Home() {
                     </Box>
                 </Box>
                 <Box className={classes.part3}>
-                    <Typography variant="h3" sx={{ fontSize: { xs: '30px', sm: '35px', md: '45px' } }}>
+                    <Typography variant="h3" sx={{ fontSize: { xs: '20px', sm: '30px', md: '30px' } }}>
                         Why Farm with EZ?
                     </Typography>
                     <Typography variant="subtitle1">High Yield. High Security. Quality Pools.</Typography>
@@ -531,8 +535,8 @@ function Home() {
                 </Box>
                 <Box className={classes.part4}>
                     <Box className="title">
-                        <Box>
-                            <Typography variant="h3">Popular Pools</Typography>
+                        <Box ml={3}>
+                            <Typography variant="h3" >Popular Pools</Typography>
                             <Typography variant="subtitle1">
                                 Seek the best available pools from top exchanges
                             </Typography>
@@ -541,7 +545,7 @@ function Home() {
                             <Common_FillButton content="View All Pools" />
                         </Box>
                     </Box>
-                    <Box sx={{ paddingTop: '50px' }}>
+                    <Box sx={{ paddingTop: '20px' }}>
                         <Slider {...slide_settings}>
                             {poolData.map((item: any, index: any) => (
                                 <Box sx={{ padding: '20px' }} key={index}>
@@ -577,7 +581,7 @@ function Home() {
                                             From {(Math.random() * 15 + 10).toFixed(2)}% to
                                         </Typography>
                                         <Typography variant="h3">
-                                            {(Math.random() * 15 + 26).toFixed(2)}% APR
+                                            {(Math.random() * 15 + 10).toFixed(2)}% APR
                                         </Typography>
                                     </Box>
                                 </Box>
@@ -593,7 +597,7 @@ function Home() {
                             <Grid item xs={12} sm={12} md={6} lg={4} key={index}>
                                 <Box className="card">
                                     <img src={item.img} alt="" />
-                                    <Box>
+                                    <Box mr={2}>
                                         <Typography variant="subtitle1">Lend</Typography>
                                         <Typography variant="h5">{item.name}</Typography>
                                     </Box>
@@ -611,10 +615,8 @@ function Home() {
                 </Box>
                 <Box className={classes.part6}>
                     <Box>
-                        <Typography variant="h3">Egestas morbi viverra lectus</Typography>
-                        <Typography variant="subtitle1">
-                            Nulla sit ac feugiat senectus proin volutpat. Enim ac pulvinar a tortor feugiat sed sit sed
-                            orci. Nisl non sit integer dui gravida.
+                        <Typography variant="h3" mb={3}>
+                            Yield Strategies & Vault Partners
                         </Typography>
                         <Stack
                             direction={'row'}
@@ -624,7 +626,7 @@ function Home() {
                             sx={{ justifyContent: { lg: 'flex-start', xs: 'center' } }}
                         >
                             <Common_FillButton content="Partner with us" />
-                            <Common_OutlineButton content="Partner with us" />
+                            <Common_OutlineButton content="View Integration" />
                         </Stack>
                     </Box>
                     <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>

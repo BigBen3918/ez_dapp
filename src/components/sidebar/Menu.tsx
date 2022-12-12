@@ -88,12 +88,12 @@ function MenuList() {
     return (
         <div className={classes.menuList}>
             <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                <img src={Logo} alt='logo' style={{ width: '40px', height: '40px' }} />
-                <Typography textAlign="center" sx={{ fontSize: '36px !important', fontWeight: 'bold', mb: 0.5, ml: 1 }}>
+                <img src={Logo} alt='logo' style={{ width: '60px', height: '60px' }} />
+                <Typography textAlign="center" sx={{ fontSize: '24px !important', fontWeight: 'bold', mb: 0.5, ml: 1 }}>
                     ez finance
                 </Typography>
             </Box>
-            <Box sx={{ mt: 8 }}>
+            <Box sx={{ mt: 5 }}>
                 {menuList?.map((item, index) =>
                     item.external ? (
                         <Link

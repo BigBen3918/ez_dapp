@@ -71,7 +71,13 @@ export const Web3ContextProvider = ({ children, ...props }: Props) => {
             window?.martian.account().then((data: any) => {
                 setAddress(data.address);
             });
-        } else {
+        }
+        else if (isConnected && wallet === 'pontem') {
+            window?.pontem.account().then((data: any) => {
+                setAddress(data);
+            });
+        }
+        else {
             setAddress(null);
         }
     }, [isConnected, wallet]);
@@ -181,12 +187,17 @@ export const Web3ContextProvider = ({ children, ...props }: Props) => {
 
     const connect = async (wallet: string) => {
         try {
+            console.log(wallet);
             if (wallet === 'petra') {
                 if ('aptos' in window) await window.aptos.connect();
                 // else window.open('https://petra.app/', `_blank`);
             } else if (wallet === 'martian') {
                 if ('martian' in window) await window.martian.connect();
                 // else window.open('https://www.martianwallet.xyz/', '_blank');
+            } else if (wallet === 'pontem') {
+                console.log('wallet === pontem');
+                if ('pontem' in window) await window.pontem.connect();
+                // else window.open('https://petra.app/', `_blank`);
             }
             setWallet(wallet);
             checkIsConnected(wallet);
@@ -199,6 +210,7 @@ export const Web3ContextProvider = ({ children, ...props }: Props) => {
         try {
             if (wallet === 'petra') await window.aptos.disconnect();
             else if (wallet === 'martian') await window.martian.disconnect();
+            else if (wallet === 'pontem') await window.pontem.disconnect();
             setWallet('');
             checkIsConnected(wallet);
         } catch (e) {
@@ -212,6 +224,9 @@ export const Web3ContextProvider = ({ children, ...props }: Props) => {
             setIsConnected(x);
         } else if (wallet === 'martian') {
             const x = await window.martian.isConnected();
+            setIsConnected(x);
+        } else if (wallet === 'pontem') {
+            const x = await window.pontem.isConnected();
             setIsConnected(x);
         }
     };
@@ -236,6 +251,8 @@ export const Web3ContextProvider = ({ children, ...props }: Props) => {
             transaction = petraTransaction;
         } else if (wallet === 'martian') {
             transaction = await window.martian.generateTransaction(sender, payload);
+        } else if (wallet === 'pontem') {
+            transaction = await window.pontem.generateTransaction(sender, payload);
         }
         try {
             setLoading(true);
@@ -243,6 +260,8 @@ export const Web3ContextProvider = ({ children, ...props }: Props) => {
                 await window.aptos.signAndSubmitTransaction(transaction);
             } else if (isConnected && wallet === 'martian') {
                 await window.martian.signAndSubmitTransaction(transaction);
+            } else if (isConnected && wallet === 'pontem') {
+                await window.pontem.signAndSubmitTransaction(transaction);
             }
         } finally {
             setLoading(false);
@@ -282,6 +301,8 @@ export const Web3ContextProvider = ({ children, ...props }: Props) => {
             transaction = petraTransaction;
         } else if (wallet === 'martian') {
             transaction = await window.martian.generateTransaction(sender, payload);
+        } else if (wallet === 'pontem') {
+            transaction = await window.pontem.generateTransaction(sender, payload);
         }
         try {
             setLoading(true);
@@ -289,6 +310,8 @@ export const Web3ContextProvider = ({ children, ...props }: Props) => {
                 await window.aptos.signAndSubmitTransaction(transaction);
             } else if (isConnected && wallet === 'martian') {
                 await window.martian.signAndSubmitTransaction(transaction);
+            } else if (isConnected && wallet === 'pontem') {
+                await window.pontem.signAndSubmitTransaction(transaction);
             }
         } finally {
             setLoading(false);
@@ -329,14 +352,17 @@ export const Web3ContextProvider = ({ children, ...props }: Props) => {
             transaction = petraTransaction;
         } else if (wallet === 'martian') {
             transaction = await window.martian.generateTransaction(sender, payload);
+        } else if (wallet === 'pontem') {
+            transaction = await window.pontem.generateTransaction(sender, payload);
         }
-
         try {
             setLoading(true);
             if (isConnected && wallet === 'petra') {
                 await window.aptos.signAndSubmitTransaction(transaction);
-            } else {
+            } else if (isConnected && wallet === 'martin') {
                 await window.martian.signAndSubmitTransaction(transaction);
+            } else if (isConnected && wallet === 'pontem') {
+                await window.pontem.signAndSubmitTransaction(transaction);
             }
         } finally {
             setLoading(false);
@@ -377,14 +403,18 @@ export const Web3ContextProvider = ({ children, ...props }: Props) => {
             transaction = petraTransaction;
         } else if (wallet === 'martian') {
             transaction = await window.martian.generateTransaction(sender, payload);
+        } else if (wallet === 'pontem') {
+            transaction = await window.pontem.generateTransaction(sender, payload);
         }
 
         try {
             setLoading(true);
             if (isConnected && wallet === 'petra') {
                 await window.aptos.signAndSubmitTransaction(transaction);
-            } else {
+            } else if (isConnected && wallet === 'martin') {
                 await window.martian.signAndSubmitTransaction(transaction);
+            } else if (isConnected && wallet === 'pontem') {
+                await window.pontem.signAndSubmitTransaction(transaction);
             }
         } finally {
             setLoading(false);
@@ -425,14 +455,18 @@ export const Web3ContextProvider = ({ children, ...props }: Props) => {
             transaction = petraTransaction;
         } else if (wallet === 'martian') {
             transaction = await window.martian.generateTransaction(sender, payload);
+        } else if (wallet === 'pontem') {
+            transaction = await window.pontem.generateTransaction(sender, payload);
         }
 
         try {
             setLoading(true);
             if (isConnected && wallet === 'petra') {
                 await window.aptos.signAndSubmitTransaction(transaction);
-            } else {
+            } else if (isConnected && wallet === 'martin') {
                 await window.martian.signAndSubmitTransaction(transaction);
+            } else if (isConnected && wallet === 'pontem') {
+                await window.pontem.signAndSubmitTransaction(transaction);
             }
         } finally {
             setLoading(false);

@@ -11,7 +11,7 @@ const useStyles = makeStyles((theme: any) => ({
     root: {
         color: 'white',
         '& > h2': {
-            fontSize: '56px',
+            fontSize: '30px',
             fontWeight: 700,
             lineHeight: '70px',
             paddingBottom: '25px',
